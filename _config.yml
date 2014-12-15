@@ -1,0 +1,16 @@
+markdown: redcarpet
+highlights: pygments
+paginate: 4
+
+# Site settings
+title: Jekyll Test Blog
+description: Just for fun
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+author: 
+    name: Jiao Xiang
+    email: sho.jiao@gmail.com
+    github: polly343900
+    twitter: polly343900
+
+
