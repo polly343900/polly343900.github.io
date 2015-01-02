@@ -1,0 +1,261 @@
+/*font icon*/
+
+@font-face {
+    font-family: "iconfont";
+    src: url(/assets/font/iconfont.eot); /* IE9*/
+    src: url(/assets/font/iconfont.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
+    url(/assets/font/iconfont.woff) format('woff'), /* chrome、firefox */
+    url(/assets/font/iconfont.ttf) format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url(/assets/font/iconfont.svg#uxiconfont) format('svg'); /* iOS 4.1- */
+    font-weight: normal;
+    font-style: normal;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:24px;
+    font-style: normal;
+    /*color: #000;*/
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github::before {
+    content: "\f01ca";
+    color: #000000;
+}
+
+.icon-twitter::before {
+    content: "\e628";
+    color: #339CC3
+}
+
+.icon-weibo::before {
+    content: "\e630";
+    color: #E6162D;
+}
+
+.icon-mail::before {
+    content: "\e647";
+    color: #d14836;
+}
+
+.icon-facebook::before {
+    content: "\e67c";
+}
+
+.icon-article::before {
+    content: "\e610";
+}
+
+.icon-home::before {
+    content: "\e604";
+}
+
+.icon-image::before {
+    content: "\f0012";
+}
+
+.icon-user::before {
+    content: "\f001f";
+}
+
+.icon-right::before {
+    content: "\e61d";
+}
+
+.icon-left::before {
+    content: "\e684";
+}
+
+.icon-camera::before {
+    content: "\3432";
+}
+
+.icon-location::before {
+    content: "\e64a";
+}
+
+.icon-top::before {
+    content: "\e61b";
+}
+
+.icon-life::before {
+    content: "\e62d";
+}
+
+.icon-book:before {
+    content: "\e675";
+}
+
+/* reset */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+/* Each part */
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* navigation */
+.site-nav {
+    text-align: center;
+}
+
+.site-nav ul {
+    display: inline-block;
+    width: auto;
+    list-style: none;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.site-nav ul li {
+    float: left;
+    display: block;
+    text-align: center;
+    margin-right: -1px;
+
+}
+
+.site-nav a {
+    display: block;
+    line-height: 1;
+    border-right: 1px solid #aaa;
+    padding: 0 50px;
+
+}
+
+/* header */
+.site-header {
+    position: relative;
+    max-width: 60em;
+    min-height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+.img-wrapper {
+    position: absolute;
+    width: 80%;
+    min-height: 400px;
+    top: 0;
+    left: 0;
+}
+
+.site-title {
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+    padding: 0 0 0.8em 1.5em;
+    font-size: 39px;
+    line-height: 1;
+    color: #e3e3e3;
+}
+
+.aside-info {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    background-color: #333;
+    width: 20%;
+    text-align: center;
+}
+
+.aside-info div {
+    border-bottom: 1px solid #666;
+    margin: 20px auto ;
+}
+
+.aside-img {
+    width: 130px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #a3a3a3;
+}
+
+.header-ul {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.header-ul a {
+    color:  rgb(183, 139, 96);
+}
+
+.post-content p, .post-list p{
+    text-indent: 2em;
+}
+
+/* paginator */
+.pagination {
+    font-size: 16px;
+    font-family: raleway,'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.pagination a, .pagination .disabled {
+    background: #fafafa;
+    border-radius: 0.1875em;
+    border: 1px solid #f3f3f3;
+    color: #333333;
+    padding: 1em 1.5em;
+}
+
+.pagination .disabled {
+    opacity: 0.5;
+}
+
+.pagination a:hover, .pagination a:focus {
+    background: white;
+    color: #477dca;
+}
+
+.pagination a:active {
+    background: #f7f7f7;
+}
+
+footer {
+    text-align: center;
+}

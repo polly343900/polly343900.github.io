@@ -1,14 +1,26 @@
 markdown: redcarpet
 highlights: pygments
-paginate: 4
+permalink: /:categories/:title/
+paginate: 3
+
+navi:
+    - title: About
+      url: /about/
+
+    - title: Articles
+      url: /articles/
+
+    - title: Life
+      url: /Life/
+
 
 # Site settings
-title: Jekyll Test Blog
-description: Just for fun
+title: 漫漫前端路
 author: 
     name: Jiao Xiang
     email: sho.jiao@gmail.com
     github: polly343900
     twitter: polly343900
+    weibo: polly343900
 
 
