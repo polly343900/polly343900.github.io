@@ -23,4 +23,8 @@ author:
     twitter: polly343900
     weibo: polly343900
 
-
+# duoshuo comments
+comments :
+    provider : duoshuo
+    duoshuo :
+          short_name : polly343900
