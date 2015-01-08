@@ -6,19 +6,17 @@
 <body>
 {% include nav.html %}
   <div class="post">
-
-    <header class="post-header">
-      <div class="wrapper">
+    <div class="wrapper">
+      <header class="post-header">
         <h2 class="post-title">{{ page.title }}</h2>
-        </div>
-    </header>
-
-    <article class="post-content">
-      <div class="wrapper">
+        {%if page.date %}
+        <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+        {% endif %}
+      </header>
+      <article class="post-content">
         {{ content }}
-      </div>
-    </article>
-
+      </article>
+    </div>
   </div>
   {% include footer.html %}
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->

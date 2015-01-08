@@ -3,13 +3,13 @@ layout: post
 title: "新的一年"
 categories: life
 ---
->原本打算新年第一天开始重头开始学习JS的，无奈此博客还未搭好。
+<div class="text-info">原本打算新年第一天开始重头开始学习JS的，无奈此博客还未搭好。
+以为自己的CSS在学习了一个月后足以应付一个博客的，无奈智商捉急，经验不足。
+还好今天硬着头皮给写完了，以后再慢慢修正吧。
+目前，此博客在手机上显示绝对是个渣。。
+</div>
 
->以为自己的CSS在学习了一个月后足以应付一个博客的，无奈智商捉急，经验不足。
 
->还好今天硬着头皮给写完了，以后再慢慢修正吧。
-
->目前，此博客在手机上显示绝对是个渣。。
 
 回顾一下2014年。想想还真是，开篇就不是很顺。结尾又尽是悲伤。至于中间，还好，有个人暗恋，还算幸福。
 可后来也验证了那签——“镜花水月”。一切不过幻想而已。
@@ -23,6 +23,9 @@ categories: life
 
 于是，昨天我就起“早”看日出了。
 
-![日出](http://7sbqpj.com1.z0.glb.clouddn.com/sunrise1.jpg)
+<figure>
+    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise1.jpg" alt="img">
+    <figcaption>Sunrise @Home</figcaption>
+</figure>
 
 最后，希望新的一年，家人平安，一切顺利，梦想达成。
