@@ -2,6 +2,7 @@
 layout: post
 title: "函数"
 categories: articles
+tags: [JavaScript, 函数]
 ---
 
 #####1. 函数声明
@@ -78,7 +79,7 @@ categories: articles
       this.b = b;
       return c; //returns a primitive value
       }
-      
+
     //Results
     > var x = new test1(4,5,6);
     undefined

@@ -532,10 +532,11 @@ th {
 }
 
 body {
-    font: 15px/1.5 "Helvetica Neue", "lucida grande", arial, "Hiragino sans gb", sans-serif;
+    font: 15px/1.5 "Helvetica Neue", arial, "Hiragino sans gb", "microsoft yahei", sans-serif;
     font-weight: 400;
     color: #111;
-    background-color: #fff;
+    background-color: #fefefe;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -592,17 +593,46 @@ blockquote, .text-info {
     font-family: 'pt serif',times,stsong,serif;
     font-size: 1rem;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 2.5rem;
     padding-left: 20px;
-    border-left: 8px solid #000;
     color: #333;
+    position: relative;
+    opacity: 0.65;
+}
+
+blockquote:before {
+    font-family: inherit;
+    content: '“';
+    position: absolute;
+    top: -.4em;
+    left: 0;
+    font-size: 2.5em;
+    opacity: .25;
+    line-height: 1;
+}
+
+blockquote::after {
+    content: '”';
+    position: absolute;
+    bottom: -0.75em;
+    right: 0;
+    font-size: 2.5em;
+    opacity: .25;
+    line-height: 1;
+}
+
+
+blockquote cite {
+    float: right;
+    margin: 20px 50px;
 }
 
 .text-info {
+    background-color: #fff;
     line-height: 2.5;
     padding: 5px 0 5px 45px;
     margin-left: 40px;
-    border-color: #91A740;
+    border-left: 8px solid #91A740;
     white-space: pre-wrap;
 }
 
@@ -627,7 +657,7 @@ figcaption {
 
 pre,
 code {
-    font: 15px menlo,monaco, monospace;
+    font: 15px menlo,monaco,"hiragino sans gb",monospace;
     border: 1px solid #e8e8e8;
     border-radius: 3px;
     background-color: transparent;
@@ -670,9 +700,29 @@ pre > code {
 
 
 /* Each wrapper */
-.wrapper {
-    width: 75%;
-    margin: 0 auto;
+/*.wrapper {*/
+    /*width: 75%;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+.wrapper{
+    margin:40px 5px 20px;
+}
+
+@media only screen and (min-width:48em){
+    .wrapper{
+        margin-right:20px;
+        margin-left:20px
+    }
+
+}
+
+@media only screen and (min-width:62.5em){
+    .wrapper{
+        max-width:75%;
+        margin: 0 auto;
+    }
+
 }
 
 .entry-wrapper {
@@ -706,8 +756,16 @@ pre > code {
     display: block;
     line-height: 1;
     border-right: 1px solid #aaa;
-    padding: 0 50px;
+    padding: 0 28px;
 }
+
+@media only screen and (min-width:48em){
+    .site-nav a {
+        padding: 0 50px;
+    }
+
+}
+
 
 /* header */
 .site-header {
@@ -770,8 +828,9 @@ pre > code {
 
 /*page content*/
 .page-content {
-    margin: 50px 0;
+    margin: 50px 0 20px 0;
 }
+
 
 .post-header {
     text-align: center;
@@ -787,6 +846,17 @@ pre > code {
     margin: 15px 0;
 }
 
+
+.post-list {
+    list-style: none;
+}
+
+.post-list li {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #e3e3e3;
+}
+
+
 .post-link:hover {
     text-decoration: underline;
 }
@@ -796,6 +866,27 @@ pre > code {
     text-transform: uppercase;
 }
 
+/*tag*/
+.tag-panel {
+    text-align: center;
+}
+
+
+.tag {
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #eee;
+    color: #646464;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.tag:hover {
+    background-color: #fff;
+}
 
 
 /* paginator */
@@ -836,5 +927,7 @@ pre > code {
     border-top: 1px solid #e8e8e8;
     padding: 30px 0;
     text-align: center;
+    font-style: italic;
+    font-family: "pt serif",serif;
 }
 

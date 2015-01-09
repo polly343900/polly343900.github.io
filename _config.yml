@@ -3,6 +3,8 @@ highlights: pygments
 permalink: /:categories/:title/
 paginate: 3
 
+img-url: http://7sbqpj.com1.z0.glb.clouddn.com/
+
 navi:
     - title: About
       url: /about/
