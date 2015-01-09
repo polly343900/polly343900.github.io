@@ -622,9 +622,8 @@ blockquote::after {
 }
 
 
-blockquote cite {
-    float: right;
-    margin: 20px 50px;
+blockquote p.clearfix {
+    text-align: center;
 }
 
 .text-info {
@@ -713,6 +712,11 @@ pre > code {
     .wrapper{
         margin-right:20px;
         margin-left:20px
+    }
+
+    blockquote cite {
+        float: right;
+        margin: 20px 50px;
     }
 
 }
@@ -854,6 +858,12 @@ pre > code {
 .post-list li {
     margin-bottom: 20px;
     border-bottom: 1px dotted #e3e3e3;
+}
+
+.post-list li::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
