@@ -759,24 +759,23 @@ pre > code {
 
 
 /* header */
+
 .site-header .wrapper{
     position: relative;
     background-color: #112801;
     border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
     overflow: hidden;
 }
 
-.img-wrapper {
-    width: 0%;
-    height: 0;
+.img-wrapper img {
+    display: none;
 }
 
 .site-title {
-
     width: 60%;
     visibility: hidden;
-
-
 }
 
 .aside-info {
@@ -805,10 +804,10 @@ pre > code {
     color: #AF9F91;
 }
 
-
 @media only screen and (min-width:48em){
-    .site-header .wrapper {
-        background-color: #2B2E27;
+
+    .img-wrapper img {
+        display: block;
     }
 
     .img-wrapper {
@@ -816,7 +815,6 @@ pre > code {
         float: left;
         position: relative;
         height: 400px;
-        overflow: hidden;
     }
 
     .site-title {
@@ -833,10 +831,6 @@ pre > code {
         width: 20%;
     }
 }
-
-
-
-
 
 /*page content*/
 .page-content {
