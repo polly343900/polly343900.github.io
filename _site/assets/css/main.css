@@ -12,7 +12,7 @@
 }
 .iconfont{
     font-family:"iconfont" !important;
-    font-size:24px;
+    font-size: 24px;
     font-style: normal;
     /*color: #000;*/
     -webkit-font-smoothing: antialiased;
@@ -670,7 +670,6 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
 }
 pre > code {
     border: 0;
@@ -697,15 +696,10 @@ pre > code {
     float: right;
 }
 
-
-/* Each wrapper */
-/*.wrapper {*/
-    /*width: 75%;*/
-    /*margin: 0 auto;*/
-/*}*/
+/* wrapper class with media query  */
 
 .wrapper{
-    margin:40px 5px 20px;
+    margin:0 5px;
 }
 
 @media only screen and (min-width:48em){
@@ -718,7 +712,6 @@ pre > code {
         float: right;
         margin: 20px 50px;
     }
-
 }
 
 @media only screen and (min-width:62.5em){
@@ -726,12 +719,6 @@ pre > code {
         max-width:75%;
         margin: 0 auto;
     }
-
-}
-
-.entry-wrapper {
-    width: 55%;
-    margin: 0 auto;
 }
 
 /* navigation */
@@ -772,40 +759,29 @@ pre > code {
 
 
 /* header */
-.site-header {
+.site-header .wrapper{
     position: relative;
-    max-width: 75%;
-    min-height: 400px;
-    margin: 0 auto;
-    overflow: hidden;
+    background-color: #112801;
     border-radius: 10px;
-    background-color: #333;
+    overflow: hidden;
 }
 
 .img-wrapper {
-    position: absolute;
-    width: 80%;
-    min-height: 400px;
-    top: 0;
-    left: 0;
+    width: 0%;
+    height: 0;
 }
 
 .site-title {
-    position: absolute;
+
     width: 60%;
-    bottom: 0;
-    padding: 0 0 0.8em 1.5em;
-    font-size: 39px;
-    line-height: 1;
-    color: #e3e3e3;
+    visibility: hidden;
+
+
 }
 
 .aside-info {
-    position: absolute;
-    top: 0;
-    left: 80%;
-    background-color: #333;
-    width: 20%;
+    float: left;
+    width: 100%;
     text-align: center;
 }
 
@@ -818,7 +794,6 @@ pre > code {
     width: 130px;
     height: 150px;
     border-radius: 50%;
-    box-shadow: 0 0 0 1px #a3a3a3;
 }
 
 .header-ul {
@@ -827,8 +802,41 @@ pre > code {
 }
 
 .header-ul a {
-    color:  rgb(183, 139, 96);
+    color: #AF9F91;
 }
+
+
+@media only screen and (min-width:48em){
+    .site-header .wrapper {
+        background-color: #2B2E27;
+    }
+
+    .img-wrapper {
+        width: 80%;
+        float: left;
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .site-title {
+        position: absolute;
+        bottom: 0;
+        font-size: 39px;
+        padding: 0 0 0.8em 1.5em;
+        line-height: 1;
+        color: #e3e3e3;
+        visibility: visible;
+    }
+
+    .aside-info {
+        width: 20%;
+    }
+}
+
+
+
+
 
 /*page content*/
 .page-content {

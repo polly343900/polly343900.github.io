@@ -1,58 +1,59 @@
 <header class="site-header">
-  <div class="img-wrapper">
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/site-header.JPG">
-  </div>
-  <div class="site-title">
-    <p>@ Home</p>
-    <p>夏日・夕阳・朝颜</p>
-  </div>
-  <div class="aside-info">
-    <div>
-        <img src="http://7sbqpj.com1.z0.glb.clouddn.com/IMG_2491.jpg" class="aside-img" alt="theme-author">
-        <h3 style="color: #f3f3f3;margin-top: 5px">{{site.author.name}}</h3>
+  <div class="wrapper">
+    <div class="img-wrapper">
+      <img src="{{site.img-url}}/site-header2.jpg">
+      <div class="site-title">
+        <p>In 鎌倉</p>
+      </div>
     </div>
-    <ul class="header-ul">
-      {% if site.author.email %}
-      <li>
-        <a href="mailto:{{ site.author.email }}">
-          <span class="icon iconfont icon-mail">
-          </span>
-          E-mail
-      </a>
-      </li>
-      {% endif %}
 
-      {% if site.author.github %}
-      <li>
-        <a href="https://github.com/{{ site.author.github }}">
-            <span class="icon iconfont icon-github">
+    <div class="aside-info">
+      <div>
+          <img src="http://7sbqpj.com1.z0.glb.clouddn.com/IMG_2491.jpg" class="aside-img" alt="theme-author">
+          <h3 style="color: #f3f3f3;margin-top: 5px">{{site.author.name}}</h3>
+      </div>
+      <ul class="header-ul">
+        {% if site.author.email %}
+        <li>
+          <a href="mailto:{{ site.author.email }}">
+            <span class="icon iconfont icon-mail">
             </span>
-          Github
+            E-mail
         </a>
-      </li>
-      {% endif %}
+        </li>
+        {% endif %}
 
-      {% if site.author.twitter %}
-      <li>
-        <a href="https://twitter.com/{{ site.author.twitter }}">
-            <span class="icon iconfont icon-twitter">
-            </span>
-          Twitter
-        </a>
-      </li>
-      {% endif %}
+        {% if site.author.github %}
+        <li>
+          <a href="https://github.com/{{ site.author.github }}">
+              <span class="icon iconfont icon-github">
+              </span>
+            Github
+          </a>
+        </li>
+        {% endif %}
 
-      {% if site.author.weibo %}
-      <li >
-        <a href="http://weibo.com/{{ site.author.weibo }}">
-            <span class="icon iconfont icon-weibo">
-            </span>
-          Weibo
-        </a>
-      </li>
-      {% endif %}
-    </ul>
+        {% if site.author.twitter %}
+        <li>
+          <a href="https://twitter.com/{{ site.author.twitter }}">
+              <span class="icon iconfont icon-twitter">
+              </span>
+            Twitter
+          </a>
+        </li>
+        {% endif %}
+
+        {% if site.author.weibo %}
+        <li >
+          <a href="http://weibo.com/{{ site.author.weibo }}">
+              <span class="icon iconfont icon-weibo">
+              </span>
+            Weibo
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+
   </div>
-  </div>
-
 </header>
