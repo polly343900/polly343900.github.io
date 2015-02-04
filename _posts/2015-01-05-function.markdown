@@ -2,7 +2,7 @@
 layout: post
 title: "函数"
 categories: articles
-tags: [JavaScript, 函数]
+tags: [JavaScript权威指南, 函数]
 ---
 
 #####1. 函数声明
@@ -102,9 +102,23 @@ tags: [JavaScript, 函数]
 
 #####4. 通过call(),apply()间接调用
 
+第一个实参是要调用函数的母对象，它是**调用上下文**，`f.call(o)`以及`f.apply(o)`的意思是：以对象o的方法来调用f函数。
+
 严格模式下，第一个实参都会变成this的值，哪怕传入的实参是原始值/null/undefined
 
 非严格模式下，传入的null/undefined会被全局变量代替。
+
+apply和call的区别在于传入实参的形式不同，比如`apply(o,[x,y,z...])`与`call(o,x,y,z,...)`。
+
+{% highlight javascript %}
+var coinFace = Math.floor(Math.random() * 2);
+
+while(coinFace === 0){
+	console.log("Heads! Flipping again...");
+	var coinFace = Math.floor(Math.random() * 2);
+}
+console.log("Tails! Done flipping.");
+{% endhighlight %}
 
 
 

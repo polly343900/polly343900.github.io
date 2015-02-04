@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>博客说明</title>
-  <meta name="description" content="1. 使用media query做了部分响应式">
+  <title>jQuery Dom</title>
+  <meta name="description" content="1. append(), appendTo()与after(), insertAfter()">
 
   <link rel="stylesheet" href="/assets/css/highlight.css">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/articles/blog-update/">
+  <link rel="canonical" href="/articles/jquery-study-series-1/">
   <link rel="alternate" type="application/atom+xml" title="漫漫前端路" href="/feed.xml" />
 
 
@@ -46,9 +46,9 @@
   <div class="post">
     <div class="wrapper">
       <header class="post-header">
-        <h1 class="post-title">博客说明</h1>
+        <h1 class="post-title">jQuery Dom</h1>
         
-        <p class="post-meta">Jan 9, 2015</p>
+        <p class="post-meta">Jan 22, 2015</p>
         
       </header>
       <article class="post-content">
@@ -56,41 +56,52 @@
   <span class="entry-tags">
       <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
       
-        <a href="/tags/#Jekyll" title="Pages tagged Jekyll" class="tag">Jekyll</a>
+        <a href="/tags/#jQuery" title="Pages tagged jQuery" class="tag">jQuery</a>
       
   </span>
 </div>
 <div class="post">
   <article class="post-content">
-    <h6>1. 使用media query做了部分响应式</h6>
+    <h5>1. append(), appendTo()与after(), insertAfter()</h5>
 
-<h6>2. 添加了tags标签</h6>
+<p>存在dom里的被插元素.append(新建的插入元素), 新建的插入元素.appendTo(存在dom里的被插元素).</p>
 
-<h6>3. blockquote样式修改</h6>
+<p>插入元素作为被插元素的最后一个子孩子。</p>
 
-<blockquote>
-<p>blockquote样式修改</p>
-</blockquote>
+<p>after()/insertAfter()相当于append()/appendTo()的关系，不同的是，插入元素是作为被插元素的后相邻节点插入的。</p>
 
-<h6>4. 添加说明样式，避免和blockquote同一个样式</h6>
+<h5>2. wrap(), wrapAll(), wrapInner()</h5>
 
-<div class="text-info">这是一个说明</div>
+<p>已有节点：<code>&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;</code></p>
 
-<h6>5. 使用figure来表示图片</h6>
+<p>代码：</p>
 
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise2.jpg" alt="img">
-    <figcaption>Sunrise @Home</figcaption>
-</figure>
+<ul>
+<li> <code>$(&quot;strong&quot;).wrap(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
 
-<h6>6. 添加多说，百度以及Google analysis，其余地方细化</h6>
+<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
+
+<ul>
+<li><code>$(&quot;strong&quot;).wrapAll(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
+
+<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
+
+<ul>
+<li><code>$(&quot;strong&quot;).wrapInner(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
+
+<p>Result: <code>&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;</code></p>
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/fj73q6cj/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
   </article>
   <!-- 多说评论框 -->
 
-<div class="ds-thread" data-thread-key="/articles/blog-update"
-     data-title="博客说明 - 漫漫前端路"
-     data-url="//articles/blog-update/">
+<div class="ds-thread" data-thread-key="/articles/jquery-study-series-1"
+     data-title="jQuery Dom - 漫漫前端路"
+     data-url="//articles/jquery-study-series-1/">
 </div>
 
 </div>

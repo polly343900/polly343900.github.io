@@ -1,13 +1,9 @@
 ---
 layout: post
-title: "博客更新"
+title: "博客说明"
 categories: articles
 tags: [Jekyll]
 ---
-### 2015-01-09
----
-
-**更新情况如下:**
 
 ######1. 使用media query做了部分响应式
 

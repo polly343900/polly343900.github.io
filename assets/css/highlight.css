@@ -1,5 +1,20 @@
 .highlight {
-    background-color: #F7F7F9
+    position: relative;
+    margin-bottom: 14px;
+    padding: 30px 14px 14px;
+    background-color: #F7F7F9;
+}
+.highlight::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #c2c0bc;
+    background-color: #f1ede4;
+    content: "Code";
 }
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #999 } /* Comment */
@@ -47,7 +62,7 @@
 .highlight .sb { color: #c30 } /* Literal.String.Backtick */
 .highlight .sc { color: #c30 } /* Literal.String.Char */
 .highlight .sd { color: #c30 } /* Literal.String.Doc */
-.highlight .s2 { color: #c30 } /* Literal.String.Double */
+.highlight .s2 { color: #B5BD64 } /* Literal.String.Double */
 .highlight .se { color: #C30 } /* Literal.String.Escape */
 .highlight .sh { color: #C30 } /* Literal.String.Heredoc */
 .highlight .si { color: #a00 } /* Literal.String.Interpol */

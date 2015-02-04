@@ -522,6 +522,7 @@ th {
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
 *:before,
@@ -539,14 +540,28 @@ body {
     width: 100%;
 }
 
+::selection {
+    background-color: #91A740;
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: #91A740;
+    color: #fff;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 15px 0;
     padding: 0;
 }
 
-p, ol, ul {
+p{
     margin: 0;
     padding: 0;
+}
+
+ul {
+    padding-left: 4em;
 }
 
 h1,
@@ -606,20 +621,11 @@ blockquote:before {
     position: absolute;
     top: -.4em;
     left: 0;
-    font-size: 2.5em;
+    font-size: 400%;
     opacity: .25;
     line-height: 1;
 }
 
-blockquote::after {
-    content: '”';
-    position: absolute;
-    bottom: -0.75em;
-    right: 0;
-    font-size: 2.5em;
-    opacity: .25;
-    line-height: 1;
-}
 
 
 blockquote p.clearfix {
@@ -656,8 +662,8 @@ figcaption {
 
 pre,
 code {
-    font: 15px menlo,monaco,"hiragino sans gb",monospace;
-    border: 1px solid #e8e8e8;
+    font: 15px monaco,"hiragino sans gb",monospace;
+    -webkit-font-smoothing: antialiased;
     border-radius: 3px;
     background-color: transparent;
 }
@@ -670,6 +676,7 @@ code {
 
 pre {
     padding: 8px 12px;
+    margin: 0;
 }
 pre > code {
     border: 0;
@@ -722,19 +729,29 @@ pre > code {
 }
 
 /* navigation */
-.site-nav {
+#site-nav {
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 1001;
 }
 
-.site-nav ul {
+.site-nav {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#site-nav ul {
     display: inline-block;
     width: auto;
     list-style: none;
     margin: 20px 0;
+    padding: 0;
     overflow: hidden;
 }
 
-.site-nav ul li {
+#site-nav ul li {
     float: left;
     display: block;
     text-align: center;
@@ -742,7 +759,7 @@ pre > code {
 
 }
 
-.site-nav a {
+#site-nav a {
     color: #000;
     display: block;
     line-height: 1;
@@ -751,7 +768,7 @@ pre > code {
 }
 
 @media only screen and (min-width:48em){
-    .site-nav a {
+    #site-nav a {
         padding: 0 50px;
     }
 
@@ -762,6 +779,7 @@ pre > code {
 
 .site-header .wrapper{
     position: relative;
+    margin-top: 70px;
     background-color: #112801;
     border-radius: 10px;
     -moz-border-radius:10px;
@@ -798,6 +816,7 @@ pre > code {
 .header-ul {
     list-style: none;
     margin: 10px 0;
+    padding: 0;
 }
 
 .header-ul a {
@@ -837,7 +856,9 @@ pre > code {
     margin: 50px 0 20px 0;
 }
 
-
+.post {
+    padding-top: 70px;
+}
 .post-header {
     text-align: center;
 }
@@ -852,14 +873,15 @@ pre > code {
     margin: 15px 0;
 }
 
-
 .post-list {
     list-style: none;
+    padding: 0;
 }
 
-.post-list li {
+.post-article {
     margin-bottom: 20px;
-    border-bottom: 1px dotted #e3e3e3;
+    padding-bottom: 15px;
+    border-bottom: 3px dashed #e3e3e3;
 }
 
 .post-list li::after {
@@ -867,7 +889,6 @@ pre > code {
     display: table;
     clear: both;
 }
-
 
 .post-link:hover {
     text-decoration: underline;
@@ -878,11 +899,16 @@ pre > code {
     text-transform: uppercase;
 }
 
+.post-list-li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e3e3e3;
+}
+
 /*tag*/
 .tag-panel {
     text-align: center;
 }
-
 
 .tag {
     display: inline-block;
