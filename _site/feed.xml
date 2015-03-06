@@ -5,8 +5,8 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Feb 2015 21:42:05 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Feb 2015 21:42:05 +0800</lastBuildDate>
+    <pubDate>Wed, 04 Mar 2015 19:38:04 +0800</pubDate>
+    <lastBuildDate>Wed, 04 Mar 2015 19:38:04 +0800</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -100,8 +100,16 @@
         &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;由于声明提前，可以在定义之前调用此函数。
-不能出现在循环，条件判断，或者try/catch/finally以及with语句里。&lt;/p&gt;
+&lt;p&gt;由于声明提前，可以在定义之前调用此函数。不能出现在循环，条件判断，或者try/catch/finally以及with语句里。&lt;/p&gt;
+
+&lt;p&gt;此外，要注意函数内的的变量声明也是会提前的。这里经常笔面试出题。&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;global&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scopeTest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;local&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//scope变量提前到console.log语句前。&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;scopeTest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//undefined&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h5&gt;2. 函数表达式(函数名可选，在递归时通常会写函数名)&lt;/h5&gt;
 

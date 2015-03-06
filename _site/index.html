@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
   <head>
-  <meta charset="gbk">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -11,35 +11,40 @@
 
   <link rel="stylesheet" href="/assets/css/highlight.css">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/">
-  <link rel="alternate" type="application/atom+xml" title="漫漫前端路" href="/feed.xml" />
-
-
+  <link href='http://fonts.googleapis.com/css?family=Raleway|PT+Serif' rel='stylesheet' type='text/css'>
 </head>
 
 
   <body>
     <nav id="site-nav" class=" ">
-    <ul class="clearfix">
+    <ul>
         <li>
-            <a href="/" class="">
+            <a href="/" class="tooltip">
                 <span class="iconfont icon-home"></span>
+                <span>Home</span>
             </a>
+
         </li>
         <li>
-            <a href="/category/article" class="">
+            <a href="/category/article" class="tooltip">
                 <span class="iconfont icon-article"></span>
+                <span>Technique</span>
             </a>
+
         </li>
         <li>
-            <a href="/category/life" class="">
+            <a href="/category/life" class="tooltip">
                 <span class="iconfont icon-camera"></span>
+                <span>Life</span>
             </a>
+
         </li>
         <li>
-            <a href="/about" class="">
+            <a href="/about" class="tooltip">
                 <span class="iconfont icon-user"></span>
+                <span>About me</span>
             </a>
+
         </li>
     </ul>
 </nav>
@@ -196,8 +201,16 @@
         <span class="p">...</span>
     <span class="p">}</span></code></pre></div>
 
-<p>由于声明提前，可以在定义之前调用此函数。
-不能出现在循环，条件判断，或者try/catch/finally以及with语句里。</p>
+<p>由于声明提前，可以在定义之前调用此函数。不能出现在循环，条件判断，或者try/catch/finally以及with语句里。</p>
+
+<p>此外，要注意函数内的的变量声明也是会提前的。这里经常笔面试出题。</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">scope</span><span class="o">=</span><span class="s2">&quot;global&quot;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">scopeTest</span><span class="p">(){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">scope</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">scope</span><span class="o">=</span><span class="s2">&quot;local&quot;</span><span class="p">;</span> <span class="c1">//scope变量提前到console.log语句前。</span>
+    <span class="p">}</span>
+    <span class="nx">scopeTest</span><span class="p">();</span> <span class="c1">//undefined</span></code></pre></div>
 
 <h5>2. 函数表达式(函数名可选，在递归时通常会写函数名)</h5>
 

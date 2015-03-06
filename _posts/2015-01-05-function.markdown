@@ -13,8 +13,18 @@ tags: [JavaScript权威指南, 函数]
     }
     {% endhighlight %}
 
-由于声明提前，可以在定义之前调用此函数。
-不能出现在循环，条件判断，或者try/catch/finally以及with语句里。
+由于声明提前，可以在定义之前调用此函数。不能出现在循环，条件判断，或者try/catch/finally以及with语句里。
+
+此外，要注意函数内的的变量声明也是会提前的。这里经常笔面试出题。
+
+    {% highlight javascript %}
+    var scope="global";
+    function scopeTest(){
+        console.log(scope);
+        var scope="local"; //scope变量提前到console.log语句前。
+    }
+    scopeTest(); //undefined
+    {% endhighlight %}
 
 #####2. 函数表达式(函数名可选，在递归时通常会写函数名)
 
