@@ -35,19 +35,19 @@ ul {
 
 .wrapper {
 	
-	/*overflow: hidden;*/
+	overflow: hidden;
 	position: relative;
-	height: 587px;
+	/*height: 587px;*/
 }
 
 .page-wrapper {
 	width: 100%;
 	position: absolute;
-	height: 2257px;
+	/*height: 2257px;*/
 }
 
 .page {
-	height: 587px;
+	/*height: 587px;*/
 }
 
 .page1 {
