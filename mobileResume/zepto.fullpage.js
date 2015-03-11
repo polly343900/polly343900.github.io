@@ -47,9 +47,11 @@
 
     $.extend(Fullpage.prototype, {
         update: function () {
-            this.height = this.$parent.height();
+            this.height = $(window).height();
 
             this.$pages.height(this.height);
+
+            this.$parent.height(this.height);
 
             this.moveTo(this.curIndex < 0 ? this.o.start : this.curIndex);
         },
@@ -78,6 +80,7 @@
                     if (that.movingFlag) {return 0;}
                     
                     var top = e.changedTouches[0].pageY - that.startY;
+
                     $this.removeClass('anim').css('top', - that.curIndex * that.height + top + 'px');
                 });
             }
@@ -115,6 +118,7 @@
 
             that.movingFlag = true;         
             that.curIndex = next;
+            console.log(next);
             $this.css('top', - next * that.height + 'px');
 
             if (next !== cur) {
