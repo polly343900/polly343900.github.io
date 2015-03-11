@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-  <head>
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>漫漫前端路</title>
-  <meta name="description" content="">
+  <title>一个尚未解决的问题</title>
+  <meta name="description" content="正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)">
 
   <link rel="stylesheet" href="/assets/css/highlight.css">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -15,8 +15,8 @@
 </head>
 
 
-  <body>
-    <nav id="site-nav" class=" ">
+<body>
+<nav id="site-nav" class=" ">
     <ul>
         <li>
             <a href="/" class="tooltip">
@@ -48,81 +48,30 @@
         </li>
     </ul>
 </nav>
-    <header class="site-header">
-  <div class="wrapper">
-    <div class="img-wrapper">
-      <img src="http://7sbqpj.com1.z0.glb.clouddn.com//site-header2.jpg">
-      <div class="site-title">
-        <p>In 鎌倉</p>
-      </div>
-    </div>
-
-    <div class="aside-info">
-      <div>
-          <img src="http://7sbqpj.com1.z0.glb.clouddn.com/IMG_2491.jpg" class="aside-img" alt="theme-author">
-          <h3 style="color: #f3f3f3;margin-top: 5px">Jiao Xiang</h3>
-      </div>
-      <ul class="header-ul">
+  <div class="post">
+    <div class="wrapper">
+      <header class="post-header">
+        <h1 class="post-title">一个尚未解决的问题</h1>
         
-        <li>
-          <a href="mailto:sho.jiao@gmail.com">
-            <span class="icon iconfont icon-mail">
-            </span>
-            E-mail
-        </a>
-        </li>
+        <p class="post-meta">Mar 11, 2015</p>
         
-
-        
-        <li>
-          <a href="https://github.com/polly343900">
-              <span class="icon iconfont icon-github">
-              </span>
-            Github
-          </a>
-        </li>
-        
-
-        
-        <li>
-          <a href="https://twitter.com/polly343900">
-              <span class="icon iconfont icon-twitter">
-              </span>
-            Twitter
-          </a>
-        </li>
-        
-
-        
-        <li >
-          <a href="http://weibo.com/polly343900">
-              <span class="icon iconfont icon-weibo">
-              </span>
-            Weibo
-          </a>
-        </li>
-        
-      </ul>
-    </div>
-
-  </div>
-</header>
-
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="home">
-
-  <ul class="post-list">
-    
-      <li class="post-article">
-        <span class="post-meta">Mar 11, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/articles/puzzle-unsolved/">一个尚未解决的问题</a>
-        </h2>
-        <div class="text-info">正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)</div>
+      </header>
+      <article class="post-content">
+        <div class="tag-panel">
+  <span class="entry-tags">
+      <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
+      
+        <a href="/tags/#HTTP" title="Pages tagged HTTP" class="tag">HTTP</a>
+      
+        <a href="/tags/#字体" title="Pages tagged 字体" class="tag">字体</a>
+      
+        <a href="/tags/#浏览器" title="Pages tagged 浏览器" class="tag">浏览器</a>
+      
+  </span>
+</div>
+<div class="post">
+  <article class="post-content">
+    <div class="text-info">正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)</div>
 
 <p>起因是某日搜东西的跳到搜狗问问页面，字体混乱地无力吐槽。如下图：
 <figure>
@@ -157,100 +106,20 @@
 <p>还有，试用了node的Express框架，故意把<code>font-family</code>写成<code>arial,sans-serif,simsun</code>，浏览器渲染的字体为<code>stheiti</code>，并不是日文字体，而是
 Mac下Chrome默认的字体。响应头里也没有content-language的信息。究竟是后端的什么东西影响了呢？</p>
 
-      </li>
-    
-      <li class="post-article">
-        <span class="post-meta">Jan 22, 2015</span>
+  </article>
+  <!-- 多说评论框 -->
 
-        <h2>
-          <a class="post-link" href="/articles/jquery-study-series-1/">jQuery Dom</a>
-        </h2>
-        <h5>1. append(), appendTo()与after(), insertAfter()</h5>
-
-<p>存在dom里的被插元素.append(新建的插入元素), 新建的插入元素.appendTo(存在dom里的被插元素).</p>
-
-<p>插入元素作为被插元素的最后一个子孩子。</p>
-
-<p>after()/insertAfter()相当于append()/appendTo()的关系，不同的是，插入元素是作为被插元素的后相邻节点插入的。</p>
-
-<h5>2. wrap(), wrapAll(), wrapInner()</h5>
-
-<p>已有节点：<code>&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;</code></p>
-
-<p>代码：</p>
-
-<ul>
-<li> <code>$(&quot;strong&quot;).wrap(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
-
-<ul>
-<li><code>$(&quot;strong&quot;).wrapAll(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
-
-<ul>
-<li><code>$(&quot;strong&quot;).wrapInner(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;</code></p>
-
-<iframe width="100%" height="300" src="http://jsfiddle.net/fj73q6cj/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-      </li>
-    
-      <li class="post-article">
-        <span class="post-meta">Jan 9, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/articles/blog-update/">博客说明</a>
-        </h2>
-        <h6>1. 使用media query做了部分响应式</h6>
-
-<h6>2. 添加了tags标签</h6>
-
-<h6>3. blockquote样式修改</h6>
-
-<blockquote>
-<p>blockquote样式修改</p>
-</blockquote>
-
-<h6>4. 添加说明样式，避免和blockquote同一个样式</h6>
-
-<div class="text-info">这是一个说明</div>
-
-<h6>5. 使用figure来表示图片</h6>
-
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise2.jpg" alt="img">
-    <figcaption>Sunrise @Home</figcaption>
-</figure>
-
-<h6>6. 添加多说，百度以及Google analysis，其余地方细化</h6>
-
-      </li>
-    
-  </ul>
-  <div class="pagination clearfix">
-    <div class="fl">
-        
-        <span class="pagination-item disabled">Newer</span>
-        
-    </div>
-    <div class="fr">
-        
-        <a class="pagination-item" href="/page2/">Older</a>
-        
-    </div>
-</div>
+<div class="ds-thread" data-thread-key="/articles/puzzle-unsolved"
+     data-title="一个尚未解决的问题 - 漫漫前端路"
+     data-url="//articles/puzzle-unsolved/">
 </div>
 
-      </div>
-    </div>
+</div>
 
-    <footer class="site-footer">
+      </article>
+    </div>
+  </div>
+  <footer class="site-footer">
 
   <div class="wrapper">
 
@@ -285,8 +154,21 @@ Mac下Chrome默认的字体。响应头里也没有content-language的信息。�
 </script>
 <script src="/assets/js/main.js" type="text/javascript"></script>
 
-
-
-  </body>
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"polly343900"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  
+</body>
 
 </html>
+

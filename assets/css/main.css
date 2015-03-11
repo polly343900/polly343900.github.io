@@ -536,6 +536,7 @@ body {
     color: #111;
     background-color: #fefefe;
     width: 100%;
+    word-break: break-all;
 }
 
 ::selection {
@@ -639,8 +640,14 @@ blockquote p.clearfix {
     white-space: pre-wrap;
 }
 
+figure {
+    text-align: center;
+}
+
 figure > img {
     display: block;
+    max-width: 30%;
+    margin: 0 auto;
 }
 
 img {
@@ -861,6 +868,10 @@ pre > code {
 .page-content {
     font-family: "Helvetica Neue", arial, "Hiragino sans gb", "microsoft yahei",sans-serif;
     margin: 50px 0 20px 0;
+}
+
+.post-content {
+    font-family: "Helvetica Neue", arial, "Hiragino sans gb", "microsoft yahei",sans-serif;
 }
 
 .post {
