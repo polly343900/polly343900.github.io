@@ -6,7 +6,7 @@ tags: [HTTP,字体,浏览器]
 ---
 <div class="text-info">正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)</div>
 
-起因是某日搜东西的跳到搜狗问问页面，字体混乱地无力吐槽。如下图：
+起因是某日搜东西的跳到搜狗问问页面，字体如下图般混乱得无力吐槽。
 <figure>
     <img src="{{ site.img-url }}sogou.png" alt="搜狗问问首页侧栏">
     <figcaption>Chrome下搜狗问问首页侧栏</figcaption>
@@ -19,10 +19,10 @@ tags: [HTTP,字体,浏览器]
     <figcaption>Chrome下该页面的渲染字体</figcaption>
 </figure>
 
-一个月后才发现：原来是Chrome的设置问题啊！因为Safari和FireFox没有这个问题啊！(T_T)。刚好那时候学了一点HTTP方面的知识，发现：原来Chrome
-下网页的HTTP response header的content-language为ja。而FireFox为en-us,Safari为zh-cn。所以，Chrome下会出现日文字体不足为奇啊。同时
+后来发现：原来是Chrome的设置问题啊！因为Safari和FireFox没有这个问题啊！(T_T)。刚好那时候学了一点HTTP方面的知识，发现：原来Chrome
+下该网页的HTTP response header的content-language为ja。而FireFox为en-us,Safari为zh-cn。所以，Chrome下会出现日文字体不足为奇啊。同时
 发现，出现这个问题的不仅仅是搜狗问问，还有丁香园。以及后来发现的，支付宝支付页面。可是，又是什么原因导致响应头的content-language为ja呢？
-为什么查看别的正常的网页的响应头里不会有content-language信息呢？
+为什么查看别的正常的网页的响应头里没有content-language信息呢？
 <figure>
     <img src="{{ site.img-url }}res-header.png" alt="Content-language information">
     <figcaption>Chrome下该网页的响应头部信息</figcaption>
@@ -36,5 +36,5 @@ tags: [HTTP,字体,浏览器]
 
 但是问题没有结束，为什么有的响应头有content-language信息，有的响应头又没有呢？
 
-还有，试用了node的Express框架，故意把`font-family`写成`arial,sans-serif,simsun`，浏览器渲染的字体为`stheiti`，并不是日文字体，而是
-Mac下Chrome默认的字体。响应头里也没有content-language的信息。究竟是后端的什么东西影响了呢？
+还有，试用了node的Express框架，故意把页面里的`font-family`写成`arial,sans-serif,simsun`，结果，Chrome渲染的字体为`stheiti`，是Mac下
+Chrome默认的中文字体，并不是日文字体。响应头里也没有content-language的信息。所以，究竟是后端的什么东西影响了呢？

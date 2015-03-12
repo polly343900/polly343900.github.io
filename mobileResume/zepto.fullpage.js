@@ -118,7 +118,7 @@
 
             that.movingFlag = true;         
             that.curIndex = next;
-            console.log(next);
+            // console.log(next);
             $this.css('top', - next * that.height + 'px');
 
             if (next !== cur) {
