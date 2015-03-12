@@ -25,6 +25,8 @@
         return cur;
     }
     function init (option) {
+        //extend the properties of d and option to a new object
+        //{} is the target
         var o = $.extend(true, {}, d, option);
         var that = this;
         that.curIndex = -1;
@@ -35,7 +37,7 @@
 
         that.$this.addClass('fullPage-wp');
         that.$parent = that.$this.parent();
-        that.$pages = that.$this.find(o.page).addClass('fullPage-page');
+        that.$pages = that.$this.find(o.page);
         that.pagesLength = that.$pages.length;
         that.update();        
         that.initEvent();
@@ -87,14 +89,14 @@
 
             // 翻转屏幕提示
             // ==============================             
-            window.addEventListener("orientationchange", function() {                
-                if (window.orientation === 180 || window.orientation === 0) {  
-                    that.o.orientationchange('portrait');
-                }  
-                if (window.orientation === 90 || window.orientation === -90 ){  
-                    that.o.orientationchange('landscape');
-                }
-            }, false);
+            // window.addEventListener("orientationchange", function() {                
+            //     if (window.orientation === 180 || window.orientation === 0) {  
+            //         that.o.orientationchange('portrait');
+            //     }  
+            //     if (window.orientation === 90 || window.orientation === -90 ){  
+            //         that.o.orientationchange('landscape');
+            //     }
+            // }, false);
 
             window.addEventListener("resize", function() {
                 that.update();

@@ -41,8 +41,8 @@
             for (var scale = options.maxVal; scale >= 0; scale -= options.stepSize) {
                 var y = options.colHead + (yScalar * count * options.stepSize);
                 ctx.fillText(scale, options.margin, y + options.margin);
-                ctx.moveTo(options.rowHead, y);
-                ctx.lineTo(can.width, y);
+                // ctx.moveTo(options.rowHead, y);
+                // ctx.lineTo(can.width, y);
                 count++;
             }
             ctx.stroke();
