@@ -14,6 +14,7 @@
         orientationchange: function () {}
     };
     function fix(cur, pagesLength) {
+
         if (cur < 0) {
             return 0;
         }
@@ -64,14 +65,12 @@
             var $this = that.$this;
 
             $this.on('touchstart', function(e){
-                e.preventDefault();
                 if (that.movingFlag) {return 0;}
 
                 that.startY = e.targetTouches[0].pageY;
             });
 
             $this.on('touchend', function (e) {
-                e.stopPropagation();
                 if (that.movingFlag) {return 0;}
 
                 var sub = e.changedTouches[0].pageY - that.startY;
@@ -102,12 +101,12 @@
                     }
                 }, false);
             }
-            // else {
-            //     window.addEventListener("resize", function() {
-            //         that.update();
-            //     }, false);
+            else {
+                window.addEventListener("resize", function() {
+                    that.update();
+                }, false);
 
-            // }               
+            }               
         },
         moveTo: function (next, anim) {
             var that = this;
@@ -127,7 +126,7 @@
 
             that.movingFlag = true;         
             that.curIndex = next;
-            // console.log(that);
+            console.log(that);
             $this.css('top', - next * that.height + 'px');
 
             if (next !== cur) {
@@ -163,5 +162,5 @@
             fullpage[val].apply(fullpage, [].slice.call(arguments, 0));
         };
     });
-    console.log(d);
+    
 }(Zepto, window));
