@@ -65,12 +65,14 @@
             var $this = that.$this;
 
             $this.on('touchstart', function(e){
+                e.stopPropagation();
                 if (that.movingFlag) {return 0;}
 
                 that.startY = e.targetTouches[0].pageY;
             });
 
             $this.on('touchend', function (e) {
+                e.stopPropagation();
                 if (that.movingFlag) {return 0;}
 
                 var sub = e.changedTouches[0].pageY - that.startY;
