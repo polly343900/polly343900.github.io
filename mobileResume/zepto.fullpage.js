@@ -93,22 +93,18 @@
 
             // 翻转屏幕
             //对于有orientationchange事件的浏览器
-            if("onorientationchange" in window) {
-                window.addEventListener("orientationchange", function() {                
-                    if (window.orientation === 180 || window.orientation === 0) {  
-                        that.o.orientationchange('portrait');
-                    }  
-                    if (window.orientation === 90 || window.orientation === -90 ){  
-                        that.o.orientationchange('landscape');
-                    }
-                }, false);
-            }
-            else {
-                window.addEventListener("resize", function() {
-                    that.update();
-                }, false);
+            window.addEventListener("orientationchange", function() {                
+                if (window.orientation === 180 || window.orientation === 0) {  
+                    that.o.orientationchange('portrait');
+                }  
+                if (window.orientation === 90 || window.orientation === -90 ){  
+                    that.o.orientationchange('landscape');
+                }
+            }, false);
 
-            }               
+            window.addEventListener("resize", function() {
+                that.update();
+            }, false);       
         },
         moveTo: function (next, anim) {
             var that = this;
