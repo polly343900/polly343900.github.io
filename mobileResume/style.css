@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 20px;
 }
 
 h3 {
@@ -29,13 +29,13 @@ ul {
 }
 
 .fullPage-wp.anim{
-    -webkit-transition: all 700ms 0 ease;
-    transition: all 00ms 0 ease; 
+    -webkit-transition: all 700ms 0 ease-in-out;
+    transition: all 700ms 0 ease-in-out; 
 }
 
 .wrapper {
 	
-	/*overflow: hidden;*/
+	overflow: hidden;
 	position: relative;
 	height: 587px;
 }
@@ -208,7 +208,12 @@ ul {
 	width: 99%;
 	background-color: rgba(255,255,255, 0.5);
 	border-radius: 10px;
-	padding: 30px 0;
+	padding: 0;
+	line-height: 1;
+}
+
+.page4 .page-head {
+	margin: 0;
 }
 
 #mycanvas {

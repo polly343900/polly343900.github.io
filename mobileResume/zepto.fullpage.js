@@ -39,6 +39,8 @@
         that.$parent = that.$this.parent();
         that.$pages = that.$this.find(o.page);
         that.pagesLength = that.$pages.length;
+
+        //初始化
         that.update();        
         that.initEvent();
     }
@@ -67,8 +69,9 @@
 
                 that.startY = e.targetTouches[0].pageY;
             });
+
             $this.on('touchend', function (e) {
-                e.preventDefault();
+                e.stopPropagation();
                 if (that.movingFlag) {return 0;}
 
                 var sub = e.changedTouches[0].pageY - that.startY;
@@ -87,20 +90,24 @@
                 });
             }
 
-            // 翻转屏幕提示
-            // ==============================             
-            // window.addEventListener("orientationchange", function() {                
-            //     if (window.orientation === 180 || window.orientation === 0) {  
-            //         that.o.orientationchange('portrait');
-            //     }  
-            //     if (window.orientation === 90 || window.orientation === -90 ){  
-            //         that.o.orientationchange('landscape');
-            //     }
-            // }, false);
+            // 翻转屏幕
+            //对于有orientationchange事件的浏览器
+            if("onorientationchange" in window) {
+                window.addEventListener("orientationchange", function() {                
+                    if (window.orientation === 180 || window.orientation === 0) {  
+                        that.o.orientationchange('portrait');
+                    }  
+                    if (window.orientation === 90 || window.orientation === -90 ){  
+                        that.o.orientationchange('landscape');
+                    }
+                }, false);
+            }
+            // else {
+            //     window.addEventListener("resize", function() {
+            //         that.update();
+            //     }, false);
 
-            window.addEventListener("resize", function() {
-                that.update();
-            }, false);
+            // }               
         },
         moveTo: function (next, anim) {
             var that = this;
@@ -120,7 +127,7 @@
 
             that.movingFlag = true;         
             that.curIndex = next;
-            // console.log(next);
+            // console.log(that);
             $this.css('top', - next * that.height + 'px');
 
             if (next !== cur) {
@@ -156,4 +163,5 @@
             fullpage[val].apply(fullpage, [].slice.call(arguments, 0));
         };
     });
+    console.log(d);
 }(Zepto, window));
