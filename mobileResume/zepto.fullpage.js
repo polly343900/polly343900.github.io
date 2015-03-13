@@ -65,7 +65,7 @@
             var $this = that.$this;
 
             $this.on('touchstart', function(e){
-                e.preventDefault();
+                e.stopPropagation();
                 if (that.movingFlag) {return 0;}
 
                 that.startY = e.targetTouches[0].pageY;
