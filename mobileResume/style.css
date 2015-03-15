@@ -29,8 +29,8 @@ ul {
 }
 
 .fullPage-wp.anim{
-    -webkit-transition: all 700ms 0 ease-in-out;
-    transition: all 700ms 0 ease-in-out; 
+    -webkit-transition: all 500ms 0 ease;
+    transition: all 500ms 0 ease; 
 }
 
 .wrapper {
