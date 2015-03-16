@@ -29,5 +29,3 @@ Result: ` <b><strong></strong><strong></strong></b>`
 + `$("strong").wrapInner("<b></b>");`
 
 Result: ` <strong><b></b></strong><strong><b></b></strong>`
-
-<iframe width="100%" height="300" src="http://jsfiddle.net/fj73q6cj/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
