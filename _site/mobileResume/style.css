@@ -29,8 +29,8 @@ ul {
 }
 
 .fullPage-wp.anim{
-    -webkit-transition: all 700ms 0 ease-in-out;
-    transition: all 700ms 0 ease-in-out; 
+    -webkit-transition: all 500ms 0 ease;
+    transition: all 500ms 0 ease; 
 }
 
 .wrapper {
@@ -201,10 +201,15 @@ ul {
 
 .page4 {
 	position: relative;
+	background-color: RGB(139, 195, 74);
+}
+
+.page5 {
+	position: relative;
 	background-color: RGB(0, 121, 107);	
 }
 
-.page4 .page-content {
+.page5 .page-content {
 	width: 99%;
 	background-color: rgba(255,255,255, 0.5);
 	border-radius: 10px;
@@ -212,7 +217,7 @@ ul {
 	line-height: 1;
 }
 
-.page4 .page-head {
+.page5 .page-head {
 	margin: 0;
 }
 
@@ -222,11 +227,6 @@ ul {
 			display: block;
 			margin: 0 auto;
 		}
-
-.page5 {
-	position: relative;
-	background-color: RGB(139, 195, 74);
-}
 
 .page6 {
 	position: relative;

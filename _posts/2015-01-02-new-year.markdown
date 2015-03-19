@@ -3,6 +3,7 @@ layout: post
 title: "新的一年"
 categories: life
 tags: [生活]
+key: 10000
 ---
 2015第一天的日出：
 

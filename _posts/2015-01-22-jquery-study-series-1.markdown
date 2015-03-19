@@ -3,6 +3,7 @@ layout: post
 title: "jQuery Dom"
 categories: articles
 tags: [jQuery]
+key: 10003
 ---
 #####1. append(), appendTo()与after(), insertAfter()
 

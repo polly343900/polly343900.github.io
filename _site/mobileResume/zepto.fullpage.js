@@ -7,14 +7,12 @@
         page: '.page',
         start: 0,
         duration: 500,
-        drag: false,
         change: function () {},
         beforeChange: function () {},
         afterChange: function () {},
         orientationchange: function () {}
     };
     function fix(cur, pagesLength) {
-
         if (cur < 0) {
             return 0;
         }
@@ -38,13 +36,12 @@
 
         that.$this.addClass('fullPage-wp');
         that.$parent = that.$this.parent();
-        that.$pages = that.$this.find(o.page);
+        that.$pages = that.$this.find(o.page).addClass('fullPage-page');
         that.pagesLength = that.$pages.length;
-
-        //初始化
         that.update();        
         that.initEvent();
     }
+    
     function Fullpage($this, option) {
         this.$this = $this;
         init.call(this, option);
@@ -63,36 +60,26 @@
         initEvent: function () {
             var that = this;
             var $this = that.$this;
-
+            var flag = false;
             $this.on('touchstart', function(e){
-                e.stopPropagation();
+                // e.preventDefault();
                 if (that.movingFlag) {return 0;}
 
                 that.startY = e.targetTouches[0].pageY;
             });
-
-            $this.on('touchend', function (e) {
+            
+            $this.on('touchmove', function (e) {
                 e.preventDefault();
                 if (that.movingFlag) {return 0;}
-
+                
                 var sub = e.changedTouches[0].pageY - that.startY;
-                var der = (sub > 30 || sub < -30) ? sub > 0 ? -1 : 1 : 0;
-
+                var der = (sub > 5 || sub < -5) ? sub > 0 ? -1 : 1 : 0;
                 that.moveTo(that.curIndex + der, true);
             });
-            if (that.o.drag) {
-                $this.on('touchmove', function (e) {
-                    e.preventDefault();
-                    if (that.movingFlag) {return 0;}
-                    
-                    var top = e.changedTouches[0].pageY - that.startY;
+            
 
-                    $this.removeClass('anim').css('top', - that.curIndex * that.height + top + 'px');
-                });
-            }
-
-            // 翻转屏幕
-            //对于有orientationchange事件的浏览器
+            // 翻转屏幕提示
+            // ==============================             
             window.addEventListener("orientationchange", function() {                
                 if (window.orientation === 180 || window.orientation === 0) {  
                     that.o.orientationchange('portrait');
@@ -104,7 +91,7 @@
 
             window.addEventListener("resize", function() {
                 that.update();
-            }, false);       
+            }, false);
         },
         moveTo: function (next, anim) {
             var that = this;
@@ -124,7 +111,6 @@
 
             that.movingFlag = true;         
             that.curIndex = next;
-            console.log(that);
             $this.css('top', - next * that.height + 'px');
 
             if (next !== cur) {
@@ -160,5 +146,4 @@
             fullpage[val].apply(fullpage, [].slice.call(arguments, 0));
         };
     });
-    
 }(Zepto, window));

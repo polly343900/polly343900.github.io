@@ -1,14 +1,18 @@
 ---
 layout: page
 ---
-<div class="tag-panel">
-  <span class="entry-tags">
-      <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
-      {% for tag in page.tags %}
-        <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>
-      {% endfor %}
-  </span>
-</div>
+{% if page.tags %}
+    <div class="tag-panel">
+      <span class="entry-tags">
+          <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
+
+              {% for tag in page.tags %}
+                <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>
+              {% endfor %}
+
+          </span>
+    </div>
+{% endif %}
 <div class="post">
   <article class="post-content">
     {{ content }}

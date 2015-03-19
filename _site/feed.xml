@@ -5,8 +5,8 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Mar 2015 22:51:36 +0800</pubDate>
-    <lastBuildDate>Fri, 13 Mar 2015 22:51:36 +0800</lastBuildDate>
+    <pubDate>Thu, 19 Mar 2015 16:11:11 +0800</pubDate>
+    <lastBuildDate>Thu, 19 Mar 2015 16:11:11 +0800</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
@@ -94,8 +94,6 @@ Chrome默认的中文字体，并不是日文字体。响应头里也没有conte
 &lt;/ul&gt;
 
 &lt;p&gt;Result: &lt;code&gt;&amp;lt;strong&amp;gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;strong&amp;gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/strong&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; src=&quot;http://jsfiddle.net/fj73q6cj/1/embedded/&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Thu, 22 Jan 2015 00:00:00 +0800</pubDate>
         <link>/articles/jquery-study-series-1/</link>

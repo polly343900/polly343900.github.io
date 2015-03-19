@@ -886,6 +886,10 @@ pre > code {
     font-style: italic;
 }
 
+.post-content .post {
+    padding-top: 30px;
+}
+
 .post-content p, .post-list p{
     text-indent: 2em;
     margin: 15px 0;

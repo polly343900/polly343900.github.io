@@ -3,6 +3,7 @@ layout: post
 title: "博客说明"
 categories: articles
 tags: [Jekyll]
+key: 10002
 ---
 
 ######1. 使用media query做了部分响应式
