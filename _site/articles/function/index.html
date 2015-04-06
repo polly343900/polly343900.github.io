@@ -174,14 +174,6 @@
 
 <p>apply和call的区别在于传入实参的形式不同，比如<code>apply(o,[x,y,z...])</code>与<code>call(o,x,y,z,...)</code>。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">coinFace</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-
-<span class="k">while</span><span class="p">(</span><span class="nx">coinFace</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Heads! Flipping again...&quot;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">coinFace</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tails! Done flipping.&quot;</span><span class="p">);</span></code></pre></div>
-
   </article>
   <!-- 多说评论框 -->
 

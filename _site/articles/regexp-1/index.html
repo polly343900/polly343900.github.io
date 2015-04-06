@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>一个尚未解决的问题</title>
-  <meta name="description" content="正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)">
+  <title>正则表达式</title>
+  <meta name="description" content="基本的元字符之类的百度谷歌各种正则书都有介绍，就不再重复啦。另外RegExr的cheatsheet也有简要介绍。">
 
   <link rel="stylesheet" href="/assets/css/highlight.css">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -51,9 +51,9 @@
   <div class="post">
     <div class="wrapper">
       <header class="post-header">
-        <h1 class="post-title">一个尚未解决的问题</h1>
+        <h1 class="post-title">正则表达式</h1>
         
-        <p class="post-meta">Mar 11, 2015</p>
+        <p class="post-meta">Mar 22, 2015</p>
         
       </header>
       <article class="post-content">
@@ -63,11 +63,9 @@
           <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
 
               
-                <a href="/tags/#HTTP" title="Pages tagged HTTP" class="tag">HTTP</a>
+                <a href="/tags/#正则" title="Pages tagged 正则" class="tag">正则</a>
               
-                <a href="/tags/#字体" title="Pages tagged 字体" class="tag">字体</a>
-              
-                <a href="/tags/#浏览器" title="Pages tagged 浏览器" class="tag">浏览器</a>
+                <a href="/tags/#JavaScript" title="Pages tagged JavaScript" class="tag">JavaScript</a>
               
 
           </span>
@@ -75,45 +73,43 @@
 
 <div class="post">
   <article class="post-content">
-    <div class="text-info">正确的标题不应该是这样的，但是由于此问题尚未解决，不知道该起什么名字好。:)</div>
+    <p>基本的元字符之类的百度谷歌各种正则书都有介绍，就不再重复啦。另外<a href="http://www.regexr.com/">RegExr</a>的cheatsheet也有简要介绍。</p>
 
-<p>起因是某日搜东西的跳到搜狗问问页面，字体如下图般混乱得无力吐槽。
+<p>要介绍的是对两个正则的理解。</p>
+
+<h5>1.密码（要求至少8个字符，至少一个数字，至少有一个小写字母和一个大写字母，至少包含一个比如<code>@#%$^</code>的字符，不能包含空白）</h5>
+
+<p>答案是<code>/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%$^])(?=\S+$).{8,}$/gm</code>。</p>
+
+<p><code>(?=abc)</code>，正向先行断言。自我吐槽一句，“断言”这个词汇硬是理解了半天。不就是“判断的句子”的意思么？所以正向断言就是判断字符串是否满足条件，
+但又不消耗字符串的字符。有点像<code>if(abc){}</code>。</p>
+
+<p>因此<code>(?=.*[0-9])</code>就是满足“除换行符以外的其他字符任意个+任意一个数字”这样一个条件。后面4个先行断言也是如此。因此整个正则的意思就是满足这5个
+条件的8个以上的任意字符。</p>
+
+<h5>2.千分符</h5>
+
+<p>在一篇介绍正则的文章中看到的这个例子。有意思的是，当初我看不懂那道正则，然后Google了一下相关问题，结果找到了另外一种解法。等我理解完这种解法
+后，我才发现Google到的那个正则要比那篇文章中的正则要难理解得多。</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">function</span> <span class="nx">putComma</span><span class="p">(</span><span class="nx">price</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">price</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\B(?=(?:\d{3})+(?!\d))/g</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+</code></pre></div>
+<p><code>(?!abc)</code>，负向先行断言。相当于<code>if(!abc){}</code>。所以<code>(?=(?:\d{3})+(?!\d))</code>的意思就是数字的数目要成3的倍数，后面不可有额外的数字。</p>
+
+<p>用一张图来解释就是这样的：</p>
+
 <figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sogou.png" alt="搜狗问问首页侧栏">
-    <figcaption>Chrome下搜狗问问首页侧栏</figcaption>
-</figure></p>
-
-<p>再查看渲染字体，把我一惊，居然有日文字体。可是明明样式里字体设置<code>font-family: tahoma,arial,helvetica,sans-serif,simsun;</code>除了把宋体错
-误地写在最后以外，并没有什么地方设置了日文字体啊。而且，除了<code>html</code>标签未设置lang属性外，也没有什么问题啊。
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/rendered-fonts.png " alt="Rendered fonts">
-    <figcaption>Chrome下该页面的渲染字体</figcaption>
-</figure></p>
-
-<p>后来发现：原来是Chrome的设置问题啊！因为Safari和FireFox没有这个问题啊！(T_T)。刚好那时候学了一点HTTP方面的知识，发现：原来Chrome
-下该网页的HTTP response header的content-language为ja。而FireFox为en-us,Safari为zh-cn。</p>
-
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/res-header.png" alt="Content-language information">
-    <figcaption>Chrome下该网页的响应头部信息</figcaption>
+    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/regexp.png" alt="regexp">
+    <figcaption>上述正则的图解</figcaption>
 </figure>
-
-<p>且accept-language里ja也是首位的。
-原来在Chrome语言设置里，日文被我稀里糊涂地排在了首位！所以，Chrome下会出现日文字体不足为奇啊。</p>
-
-<blockquote>
-<p>Content-Language is from the server, and lets the client know what language(s) are present on the requested page.
-Accept-Language is from the client, and lets the server know the user&#39;s preferred language(s).</p>
-</blockquote>
-
-<p><strong>可是，为什么相同的设置，大多数网页都是正常的，且响应头里没有content-language信息呢？（后端知识不够啊.T_T）</strong></p>
 
   </article>
   <!-- 多说评论框 -->
 
-<div class="ds-thread" data-thread-key="10005"
-     data-title="一个尚未解决的问题 - 漫漫前端路"
-     data-url="//articles/puzzle-unsolved/">
+<div class="ds-thread" data-thread-key="10006"
+     data-title="正则表达式 - 漫漫前端路"
+     data-url="//articles/regexp-1/">
 </div>
 
 </div>

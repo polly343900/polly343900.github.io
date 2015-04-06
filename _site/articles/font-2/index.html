@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width initial-scale=1, maximum-scale=1, user-scalable=no">
 
-  <title>记录生活</title>
-  <meta name="description" content="">
+  <title>字体2</title>
+  <meta name="description" content="1.font-family应该优先指定英文字体，然后再指定中文字体。否则，中文字体所包含的英文字母，会取代英文字体。">
 
   <link rel="stylesheet" href="/assets/css/highlight.css">
   <link rel="stylesheet" href="/assets/css/main.css">
@@ -51,23 +51,69 @@
   <div class="post">
     <div class="wrapper">
       <header class="post-header">
-        <h1 class="post-title">记录生活</h1>
+        <h1 class="post-title">字体2</h1>
+        
+        <p class="post-meta">Dec 7, 2014</p>
         
       </header>
       <article class="post-content">
-        <blockquote>
-<p>きっといいことがあります~
-<p class="clearfix"><cite>— 《白雪姬杀人事件》</cite></p></p>
-</blockquote>
+        
+    <div class="tag-panel">
+      <span class="entry-tags">
+          <span style="font-family:pt serif;font-style: italic">Tags:&nbsp;&nbsp;</span>
 
-<div class="wrapper">
-<ul class="post-list">
+              
+                <a href="/tags/#CSS权威指南" title="Pages tagged CSS权威指南" class="tag">CSS权威指南</a>
+              
+                <a href="/tags/#Font" title="Pages tagged Font" class="tag">Font</a>
+              
 
-  <li class="post-list-li"><a href="/life/why-fe/">为什么选择前端 <span class="entry-date"><time datetime="2015-04-03T00:00:00+08:00">April 03, 2015</time></span></a></li>
+          </span>
+    </div>
 
-  <li class="post-list-li"><a href="/life/new-year/">新的一年 <span class="entry-date"><time datetime="2015-01-02T00:00:00+08:00">January 02, 2015</time></span></a></li>
+<div class="post">
+  <article class="post-content">
+    <h5>1.font-family应该优先指定英文字体，然后再指定中文字体。否则，中文字体所包含的英文字母，会取代英文字体。</h5>
 
-</ul>
+<p>这一点觉得国内做得不错了。。吐槽一下我们的邻国日本，青一色的日文字体在前英文字体在后。不过日常他们确实偏爱日文字体的<strong>全角</strong>英文啊。</p>
+
+<h5>2.为什么经常看到网页中宋体用unicode而不用英文名（淘宝），</h5>
+
+<figure>
+    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/taobao-font.png" alt="淘宝首页字体">
+    <figcaption>淘宝首页字体设置</figcaption>
+</figure>
+
+<p>这是因为Firefox的某些版本和早期Opera识别不了中文字体的英文写法，比如SimSun。（unicode编码都可以通过escape(‘字体名’)获得。）</p>
+
+<p>Mac下Opera因为是Webkit内核，所以也支持SimSun的写法了。</p>
+
+<p>那写成<code>font-family: arial,\5B8B\4F53,sans-serif</code>好么？</p>
+
+<p>答案是不好。因为Mac的Chrome,Safari等webkit系浏览器不认unicode转码过来的字体，事实上它连<code>font-family: 宋体；</code>这种写法都不接受...
+如果是Mac的Chrome默认设置，显示的字体将会是<code>stheiti</code>。</p>
+
+<h5>3.字体fallback问题</h5>
+
+<p>参考文献1有很详细的介绍。</p>
+
+<h4>一些参考文献：</h4>
+
+<ol>
+<li><p><a href="http://justineo.github.io/slideshows/font/#/">字体漫谈</a></p></li>
+<li><p><a href="http://lifesinger.wordpress.com/2011/04/06/best-web-default-fonts/">最佳Web中文默认字体</a></p></li>
+<li><p><a href="http://www.zhihu.com/question/19911793">如何保证网页的字体在各平台都尽量显示为最高质量的黑体</a></p></li>
+<li><p><a href="http://lifesinger.github.io/lab/2011/default-fonts/">玉伯的字体测试</a></p></li>
+</ol>
+
+  </article>
+  <!-- 多说评论框 -->
+
+<div class="ds-thread" data-thread-key="9001"
+     data-title="字体2 - 漫漫前端路"
+     data-url="//articles/font-2/">
+</div>
+
 </div>
 
       </article>

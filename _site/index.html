@@ -117,6 +117,86 @@
   <ul class="post-list">
     
       <li class="post-article">
+        <span class="post-meta">Apr 3, 2015</span>
+
+        <h2>
+          <a class="post-link" href="/life/why-fe/">为什么选择前端</a>
+        </h2>
+        <p>这些天面试反复地被问到这样的问题。而每次因为紧张和时间仓促，感觉也没有很好地叙述这个问题。</p>
+
+<p>如果看过我的简历，应该知道2013-10月到2014-8月在日本实习。该怎么说这段经历呢？毫不犹豫地说，这段经历对我技术方面毫无益处。因为这和我现在要
+从事的前端方向是南辕北辙的。我所收获的，是除了编程以外的技能。除此，还有我自己都不清楚底究竟是在实习期间收获的，还是在回国后的那段经历所收获
+的体会。</p>
+
+<p>这就得说说我实习前的状态了。或者更早些，为什么我选择计算机行业。</p>
+
+<p>我数学很糟糕。但一点都不妨碍我高考两次都选择了计算机相关的专业，哪怕是我爸一而再再而三地劝我应该选择比如英语，化学之类我擅长的科目。我家从01
+年开始有了电脑，和我那些同学比起来，我真是超前了不少。也正是这种优势让我选择了计算机吧。但小县城这种环境，根本让我接触不了编程语言，我并没想
+到它远远比我想象得复杂。我只是憧憬着，中二着，幻想着。我对它有兴趣，但我却没有深入了解过它。</p>
+
+<p>然后大学四年消磨了我对它所有的兴趣。数据结构与算法在我眼中仅仅是考研必考科目而已。而且还考得不咋地。但不意味着我没有努力过。至少我觉得我努力
+了。我也觉得我理解了。但是就是不会把它转换成代码。仿佛代码和算法思想之间缺少了纽带。</p>
+
+<p>然后就到了研究生时期。我曾决心这段时期（研一）一定要精通一门语言，一定要熟悉算法和数据结构。可软院的课程实在太多了。不得不说这段时期我有些心
+有余而力不足。这也许就是本科基础不牢的后遗症吧。然后我就迷茫得心乱了，甚至连小说都看不进去了，更不用提技术书。</p>
+
+<p>实习完后，我体验到前所未有的挫折--找工作/实习。我不知道自己该找一份什么样的工作。我不想从事在日本期间的图像处理方向，也不想转而去搞产品。开
+发要求比较高，那就去测试吧。不行，测试听说很无聊，还是折衷搞测试开发吧。9月10月我就这么找着，也许是立场不坚定，对这个方向也不是很喜欢，结果
+扑了个空。10月底的时候，同去日本实习过的朱桑说，搞前端吧，前端需求量大，又容易。</p>
+
+<p>然后，我就入了这个坑。整个十一月看的都是面试题。那个月笔了3家公司，面了2家公司，都是一面挂。这是很明显的，基础不牢。那个月真是痛并快乐着。痛
+的是一个人学习的孤独，快乐的是解决一个个问题的喜悦。那时候便开始觉得，也许，前端真是一个不错的选择呢。</p>
+
+<p>十二月意识到基础不牢后，开始看《CSS权威指南》。第一个难关就是字体。好久不曾为一个问题急躁，翻看各种资料，获取其中的信息，喜悦。还挺享受这样
+的一个过程。所以就这么一直一直坚持到现在。仿佛回到那个时候，那个对知识极度渴望的时候。这也是我继续并打算长久从事前端的理由吧。</p>
+
+<p>现在，最大的问题。也许这几个月学得太泛，太杂。有些自认为掌握的知识点又模糊不清。还需不停地回顾总结。还有一个，算法。现在对算法有种浓浓的愧疚
+感。这将会是以后的学习重点。</p>
+
+<p>最后，简单地概括下，为什么选择前端。因为我开心啊~~^_^</p>
+
+      </li>
+    
+      <li class="post-article">
+        <span class="post-meta">Mar 22, 2015</span>
+
+        <h2>
+          <a class="post-link" href="/articles/regexp-1/">正则表达式</a>
+        </h2>
+        <p>基本的元字符之类的百度谷歌各种正则书都有介绍，就不再重复啦。另外<a href="http://www.regexr.com/">RegExr</a>的cheatsheet也有简要介绍。</p>
+
+<p>要介绍的是对两个正则的理解。</p>
+
+<h5>1.密码（要求至少8个字符，至少一个数字，至少有一个小写字母和一个大写字母，至少包含一个比如<code>@#%$^</code>的字符，不能包含空白）</h5>
+
+<p>答案是<code>/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#%$^])(?=\S+$).{8,}$/gm</code>。</p>
+
+<p><code>(?=abc)</code>，正向先行断言。自我吐槽一句，“断言”这个词汇硬是理解了半天。不就是“判断的句子”的意思么？所以正向断言就是判断字符串是否满足条件，
+但又不消耗字符串的字符。有点像<code>if(abc){}</code>。</p>
+
+<p>因此<code>(?=.*[0-9])</code>就是满足“除换行符以外的其他字符任意个+任意一个数字”这样一个条件。后面4个先行断言也是如此。因此整个正则的意思就是满足这5个
+条件的8个以上的任意字符。</p>
+
+<h5>2.千分符</h5>
+
+<p>在一篇介绍正则的文章中看到的这个例子。有意思的是，当初我看不懂那道正则，然后Google了一下相关问题，结果找到了另外一种解法。等我理解完这种解法
+后，我才发现Google到的那个正则要比那篇文章中的正则要难理解得多。</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">function</span> <span class="nx">putComma</span><span class="p">(</span><span class="nx">price</span><span class="p">){</span>
+      <span class="k">return</span> <span class="nx">price</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\B(?=(?:\d{3})+(?!\d))/g</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+</code></pre></div>
+<p><code>(?!abc)</code>，负向先行断言。相当于<code>if(!abc){}</code>。所以<code>(?=(?:\d{3})+(?!\d))</code>的意思就是数字的数目要成3的倍数，后面不可有额外的数字。</p>
+
+<p>用一张图来解释就是这样的：</p>
+
+<figure>
+    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/regexp.png" alt="regexp">
+    <figcaption>上述正则的图解</figcaption>
+</figure>
+
+      </li>
+    
+      <li class="post-article">
         <span class="post-meta">Mar 11, 2015</span>
 
         <h2>
@@ -130,7 +210,7 @@
     <figcaption>Chrome下搜狗问问首页侧栏</figcaption>
 </figure></p>
 
-<p>再查看渲染字体，把我一惊，居然有日文字体。可是明明样式里字体设置<code>font-family: Tahoma,Arial,Helvetica,sans-serif,SimSun;</code>除了把宋体错
+<p>再查看渲染字体，把我一惊，居然有日文字体。可是明明样式里字体设置<code>font-family: tahoma,arial,helvetica,sans-serif,simsun;</code>除了把宋体错
 误地写在最后以外，并没有什么地方设置了日文字体啊。而且，除了<code>html</code>标签未设置lang属性外，也没有什么问题啊。
 <figure>
     <img src="http://7sbqpj.com1.z0.glb.clouddn.com/rendered-fonts.png " alt="Rendered fonts">
@@ -138,95 +218,22 @@
 </figure></p>
 
 <p>后来发现：原来是Chrome的设置问题啊！因为Safari和FireFox没有这个问题啊！(T_T)。刚好那时候学了一点HTTP方面的知识，发现：原来Chrome
-下该网页的HTTP response header的content-language为ja。而FireFox为en-us,Safari为zh-cn。所以，Chrome下会出现日文字体不足为奇啊。同时
-发现，出现这个问题的不仅仅是搜狗问问，还有丁香园。以及后来发现的，支付宝支付页面。可是，又是什么原因导致响应头的content-language为ja呢？
-为什么查看别的正常的网页的响应头里没有content-language信息呢？
+下该网页的HTTP response header的content-language为ja。而FireFox为en-us,Safari为zh-cn。</p>
+
 <figure>
     <img src="http://7sbqpj.com1.z0.glb.clouddn.com/res-header.png" alt="Content-language information">
     <figcaption>Chrome下该网页的响应头部信息</figcaption>
-</figure></p>
-
-<p>一段时间我都认为是Google account的缘故，因为在Chrome登录的Google account是在日本实习的时候注册的，信息什么的都以在日实习信息为准。而且
-切换账号后，content-language为zh-cn。</p>
-
-<p>直到今天才发现，原来在Chrome语言设置里，日文被我稀里糊涂地排在了首位！尝试了下在FF下，设置语言为日文时，搜狗问问的字体也是混乱的。至此，应
-该可以得出结论--浏览器的语言设置会影响content-language，进而会导致一些font-family书写错误的网页出现字体混乱。</p>
-
-<p>但是问题没有结束，为什么有的响应头有content-language信息，有的响应头又没有呢？</p>
-
-<p>还有，试用了node的Express框架，故意把页面里的<code>font-family</code>写成<code>arial,sans-serif,simsun</code>，结果，Chrome渲染的字体为<code>stheiti</code>，是Mac下
-Chrome默认的中文字体，并不是日文字体。响应头里也没有content-language的信息。所以，究竟是后端的什么东西影响了呢？</p>
-
-      </li>
-    
-      <li class="post-article">
-        <span class="post-meta">Jan 22, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/articles/jquery-study-series-1/">jQuery Dom</a>
-        </h2>
-        <h5>1. append(), appendTo()与after(), insertAfter()</h5>
-
-<p>存在dom里的被插元素.append(新建的插入元素), 新建的插入元素.appendTo(存在dom里的被插元素).</p>
-
-<p>插入元素作为被插元素的最后一个子孩子。</p>
-
-<p>after()/insertAfter()相当于append()/appendTo()的关系，不同的是，插入元素是作为被插元素的后相邻节点插入的。</p>
-
-<h5>2. wrap(), wrapAll(), wrapInner()</h5>
-
-<p>已有节点：<code>&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;</code></p>
-
-<p>代码：</p>
-
-<ul>
-<li> <code>$(&quot;strong&quot;).wrap(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
-
-<ul>
-<li><code>$(&quot;strong&quot;).wrapAll(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
-
-<ul>
-<li><code>$(&quot;strong&quot;).wrapInner(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
-</ul>
-
-<p>Result: <code>&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;</code></p>
-
-      </li>
-    
-      <li class="post-article">
-        <span class="post-meta">Jan 9, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/articles/blog-update/">博客说明</a>
-        </h2>
-        <h6>1. 使用media query做了部分响应式</h6>
-
-<h6>2. 添加了tags标签</h6>
-
-<h6>3. blockquote样式修改</h6>
-
-<blockquote>
-<p>blockquote样式修改</p>
-</blockquote>
-
-<h6>4. 添加说明样式，避免和blockquote同一个样式</h6>
-
-<div class="text-info">这是一个说明</div>
-
-<h6>5. 使用figure来表示图片</h6>
-
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise2.jpg" alt="img">
-    <figcaption>Sunrise @Home</figcaption>
 </figure>
 
-<h6>6. 添加多说，百度以及Google analysis，其余地方细化</h6>
+<p>且accept-language里ja也是首位的。
+原来在Chrome语言设置里，日文被我稀里糊涂地排在了首位！所以，Chrome下会出现日文字体不足为奇啊。</p>
+
+<blockquote>
+<p>Content-Language is from the server, and lets the client know what language(s) are present on the requested page.
+Accept-Language is from the client, and lets the server know the user&#39;s preferred language(s).</p>
+</blockquote>
+
+<p><strong>可是，为什么相同的设置，大多数网页都是正常的，且响应头里没有content-language信息呢？（后端知识不够啊.T_T）</strong></p>
 
       </li>
     

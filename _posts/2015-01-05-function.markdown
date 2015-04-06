@@ -121,17 +121,6 @@ key: 10001
 
 apply和call的区别在于传入实参的形式不同，比如`apply(o,[x,y,z...])`与`call(o,x,y,z,...)`。
 
-{% highlight javascript %}
-var coinFace = Math.floor(Math.random() * 2);
-
-while(coinFace === 0){
-	console.log("Heads! Flipping again...");
-	var coinFace = Math.floor(Math.random() * 2);
-}
-console.log("Tails! Done flipping.");
-{% endhighlight %}
-
-
 
 
 

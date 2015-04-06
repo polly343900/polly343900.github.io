@@ -117,6 +117,77 @@
   <ul class="post-list">
     
       <li class="post-article">
+        <span class="post-meta">Jan 22, 2015</span>
+
+        <h2>
+          <a class="post-link" href="/articles/jquery-study-series-1/">jQuery Dom</a>
+        </h2>
+        <h5>1. append(), appendTo()与after(), insertAfter()</h5>
+
+<p>存在dom里的被插元素.append(新建的插入元素), 新建的插入元素.appendTo(存在dom里的被插元素).</p>
+
+<p>插入元素作为被插元素的最后一个子孩子。</p>
+
+<p>after()/insertAfter()相当于append()/appendTo()的关系，不同的是，插入元素是作为被插元素的后相邻节点插入的。</p>
+
+<h5>2. wrap(), wrapAll(), wrapInner()</h5>
+
+<p>已有节点：<code>&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;</code></p>
+
+<p>代码：</p>
+
+<ul>
+<li> <code>$(&quot;strong&quot;).wrap(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
+
+<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
+
+<ul>
+<li><code>$(&quot;strong&quot;).wrapAll(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
+
+<p>Result: <code>&lt;b&gt;&lt;strong&gt;&lt;/strong&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/b&gt;</code></p>
+
+<ul>
+<li><code>$(&quot;strong&quot;).wrapInner(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</code></li>
+</ul>
+
+<p>Result: <code>&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;&lt;strong&gt;&lt;b&gt;&lt;/b&gt;&lt;/strong&gt;</code></p>
+
+      </li>
+    
+      <li class="post-article">
+        <span class="post-meta">Jan 9, 2015</span>
+
+        <h2>
+          <a class="post-link" href="/articles/blog-update/">博客说明</a>
+        </h2>
+        <h6>1. 使用media query做了部分响应式</h6>
+
+<h6>2. 添加了tags标签</h6>
+
+<h6>3. blockquote样式修改</h6>
+
+<blockquote>
+<p>blockquote样式修改</p>
+</blockquote>
+
+<h6>4. 添加说明样式，避免和blockquote同一个样式</h6>
+
+<div class="text-info">这是一个说明</div>
+
+<h6>5. 使用figure来表示图片</h6>
+
+<figure>
+    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise2.jpg" alt="img">
+    <figcaption>Sunrise @Home</figcaption>
+</figure>
+
+<h6>6. 添加多说，百度以及Google analysis，其余地方细化</h6>
+
+      </li>
+    
+      <li class="post-article">
         <span class="post-meta">Jan 5, 2015</span>
 
         <h2>
@@ -223,31 +294,6 @@
 
 <p>apply和call的区别在于传入实参的形式不同，比如<code>apply(o,[x,y,z...])</code>与<code>call(o,x,y,z,...)</code>。</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">coinFace</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-
-<span class="k">while</span><span class="p">(</span><span class="nx">coinFace</span> <span class="o">===</span> <span class="mi">0</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Heads! Flipping again...&quot;</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">coinFace</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tails! Done flipping.&quot;</span><span class="p">);</span></code></pre></div>
-
-      </li>
-    
-      <li class="post-article">
-        <span class="post-meta">Jan 2, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/life/new-year/">新的一年</a>
-        </h2>
-        <p>2015第一天的日出：</p>
-
-<figure>
-    <img src="http://7sbqpj.com1.z0.glb.clouddn.com/sunrise1.jpg" alt="img">
-    <figcaption>Sunrise @Home</figcaption>
-</figure>
-
-<p>最后，希望新的一年，家人平安，一切顺利，梦想达成。</p>
-
       </li>
     
   </ul>
@@ -261,7 +307,7 @@
     </div>
     <div class="fr">
         
-        <span class="pagination-item disabled">Older</span>
+        <a class="pagination-item" href="/page3/">Older</a>
         
     </div>
 </div>
