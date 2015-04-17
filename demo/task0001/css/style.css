@@ -436,6 +436,7 @@ footer .copy-info img {
     background-color: #ddd;
     -webkit-transform: rotate(-45deg);
        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
 
 }
@@ -800,6 +801,7 @@ footer .copy-info img {
     left: 50%;
     -webkit-transform: translateX(-50%);
        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
             transform: translateX(-50%);
 }
 
@@ -848,5 +850,6 @@ footer .copy-info img {
     text-align: center;
     -webkit-transform: translateX(-50%);
        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
             transform: translateX(-50%);
 }
