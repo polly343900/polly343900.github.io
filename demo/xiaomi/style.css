@@ -1,0 +1,131 @@
+@font-face {font-family: "iconfont";
+  src: url('font/iconfont.eot'); /* IE9*/
+  src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    color: #a55;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home::before {
+	content: "\e600";
+}
+
+.icon-menu::before {
+	content: "\e601";
+}
+
+.icon-back::before {
+	content: "\e602";
+}
+
+.phone {
+	position: relative;
+	width: 320px;
+	height: 560px;
+	background-color: #839D98;
+	padding: 50px 20px 70px;
+	border-radius: 10px;
+}
+
+.phone::before {
+	content: ' ';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 352px;
+	height: 672px;
+	background-color: #bfe2c5;
+	border-radius: 6px;
+}
+
+.speaker {
+	position: absolute;
+	top: 4px;
+	left: 50%;
+	width: 50px;
+	height: 6px;
+	margin-left: -25px;
+	background: radial-gradient(#545454 25%, transparent 50%) 0 0,
+	    radial-gradient(#545454 25%, transparent 50%) 4px 4px;
+	background-size: 3px 3px;
+    background-position: top left;
+}
+
+.camera {
+	position: absolute;
+	left: 40px;
+	top: 14px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #3c3d3d;
+}
+
+.sensor {
+	position: absolute;
+	top: 15px;
+	left: 65px;
+	width: 22px;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #3c3d3d;
+}
+
+.volume,
+.sleep {
+	background-color: #bfe2c5;
+}
+
+.volume {
+	position: absolute;
+	top: 80px;
+	right: -4px;
+    width: 4px;
+    height: 100px;
+    border-radius: 1px;
+}
+
+.sleep {
+	position: absolute;
+	top: 200px;
+	right: -4px;
+	width: 4px;
+	height: 30px;
+	border-radius: 1px;
+}
+
+.screen {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+}
+
+.menu {
+	position: absolute;
+	bottom: 30px;
+	left: 20%
+}
+
+.home {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -8px;
+}
+
+.back {
+	position: absolute;
+	bottom: 30px;
+	right: 20%;
+}
