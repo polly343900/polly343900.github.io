@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_1</title>
+	<style>
+		body {
+			font: 16px/1.5 arial,stheiti,sans-serif;
+		}
+		
+		label {
+			display: block;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		
+		textarea, input {
+			font-size: inherit;
+			line-height: inherit;
+			outline: 0 none;
+			border: 1px solid #bae;
+			border-radius: 3px;
+		}
+		
+		.input-area {
+			float: left;
+			width: 50%;
+		}
+		
+		.text-input {
+			resize: none;
+		}
+		
+		.text-input:focus {
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075),
+			0 0 8px rgba(187, 170, 238, 0.6);
+		}
+		
+		.btn[disabled] {
+			color: #aaa;
+		}
+		
+		.btn {
+			display: block;
+			cursor: pointer;
+			background-color: #fff;
+		}
+		
+		.input-result {
+			margin-left: 50%;
+		}
+		
+		.bad-result {
+			display: none;
+			color: #a55;
+			padding-top: 39px;
+		}
+		
+		.bad-result.show {
+			display: block;
+		}
+		
+		.good-results {
+			list-style: none;
+			margin: 0;
+			padding-top: 39px;
+			padding-left: 0;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="inputArea" class="input-area">
+		<label for="text">请输入您的兴趣爱好（少于10个）：</label>
+		<textarea id="textInput" class="text-input" cols="50" rows="10" name="text"></textarea>
+		<input type="submit" value="OK" class="btn" id="submit" disabled>
+	</div>
+	<div id="result" class="input-result">
+		<div id="bResult" class="bad-result">Invalid!</div>
+		<ul id="gResult" class="good-results">
+		</ul>
+	</div>
+	<script src="js/util.js"></script>
+	<script src="js/task0002_1.js"></script>
+	<script>
+		$('inputArea').interestlist();
+	</script>
+</body>
+</html>
