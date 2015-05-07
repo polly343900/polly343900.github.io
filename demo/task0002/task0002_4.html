@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>task0002_4</title>
+	<style>
+		body {
+			font: 14px/1.5 arial,'hiragino sans gb',sans-serif;
+		}
+		
+		.wrapper {
+			width: 400px;
+			margin: 0 auto;
+		}
+		
+		input {
+			font-size: inherit;
+		}
+		
+		.input-form {
+			position: relative;
+		}
+		
+		.input-text {
+			width: 300px;
+			height: 28px;
+			padding: 10px;
+			border: 1px solid #ace;
+			outline: 0 none;
+		}
+		
+		.input-text:focus {
+			border: 1px solid #999;
+		}
+		
+		.input-submit {
+			position: absolute;
+			left: 322px;
+			width: 78px;
+			height: 50px;
+			line-height: 50px;
+			border: 0 none;
+			background-color: #999;
+			color: #fff;
+			cursor: pointer;
+		}
+		
+		.result-list {
+			position: abosolute;
+			display: none;
+			list-style: none;
+			padding: 0 10px;
+			margin: 0;
+		}
+		
+		.result-list li {
+			border-bottom: 1px solid #ace;
+			cursor: pointer;
+		}
+		
+		.selected {
+			background-color: #ace;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<form action=""  class="input-form">
+			<input type="text" class="input-text" id="autocomplete" autocomplete="off">
+			<input type="submit" class="input-submit" value="Go">
+		</form>
+		<ul id="result" class="result-list"></ul>
+	</div>
+	<script src="js/util.js"></script>
+	<script src="js/task0002_4.js"></script>
+</body>
+</html>
