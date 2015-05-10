@@ -1,7 +1,8 @@
 (function(){
 	var defaults = {
 		reverse: false,
-		loop: true,
+		arrow: false,
+		cycle: true,
 		interval: 2000
 	}
 	
@@ -13,9 +14,18 @@
 		this.itemLen = this.indList.length;
 		this.height = el.getSize().height / this.itemLen;
 		this.flag = false;
+		this.timeid = 0;
 		this.index = 0;
 		this.show();
-		this.autoPlay();
+		if(this.options.cycle) this.autoPlay();
+		var that = this;
+		$.on('.container', 'mouseover', function(e){
+			that.timeid = clearTimeout(that.timeid);
+		});
+		
+		$.on('.container', 'mouseout', function(e){
+			that.autoPlay();
+		})
 	}
 	
 	Carousel.prototype.moveTo = function(index){
@@ -35,20 +45,32 @@
 		$.delegate('#indicator', 'li', 'click', function(e){
 			var idx = idcArray.indexOf(e.target);
 			that.moveTo(idx);
-			this.flag = false;
+			that.flag = false;
 		});
+		if(this.options.arrow){
+			$('#arrow')[0].style.display = 'block';
+			$.delegate('#arrow', 'span', 'click', function(e){
+				if(e.target.className === 'arrow-left'){
+					that.moveTo(that.index - 1);
+					that.flag = false;
+				} else if(e.target.className === 'arrow-right'){
+					that.moveTo(that.index + 1);
+					that.flag = false;
+				}
+			});
+		}
 	};
 	
 	Carousel.prototype.autoPlay = function(){
 		this.flag = false;
 		var that = this;
 		if(this.options.reverse === true){
-			setTimeout(function(){
+			that.timeid = setTimeout(function(){
 				that.moveTo(that.index - 1);
 				that.autoPlay();			
 			}, that.options.interval);
 		} else {
-			setTimeout(function(){
+			that.timeid = setTimeout(function(){
 				that.moveTo(that.index + 1);
 				that.autoPlay();
 			}, that.options.interval);

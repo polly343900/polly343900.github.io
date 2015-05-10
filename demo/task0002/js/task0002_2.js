@@ -25,27 +25,31 @@
 	    var minutes = 60 * seconds;
 	    var hours = 60 * minutes;
 	    var days = 24 * hours;				
-        
-		var diff = this.endDate - Date.now();
-		if(diff > 0){
-		    this.remainDays = Math.floor(diff / days);
-		    this.remainHours = Math.floor((diff % days) / hours);
-		    this.remainMinutes = Math.floor((diff % hours) / minutes);
-		    this.remainSeconds = Math.round((diff % minutes) / seconds);
-		}		
+        this.remainDays = Math.floor(this.diff / days);
+		this.remainHours = Math.floor((this.diff % days) / hours);
+		this.remainMinutes = Math.floor((this.diff % hours) / minutes);
+		this.remainSeconds = Math.round((this.diff % minutes) / seconds);		
 	};
 	
 	CountDown.prototype.show = function () {
-	    this.calculate();
 		var timeDisplay = $('#time')[0];
-		timeDisplay.innerHTML = '距离 ' + this.endDate.toString() + ' 还剩 ' + this.remainDays + 
-		        ' Days ' + this.remainHours + 
-			    ' Hours ' + this.remainMinutes + 
-			    ' Minutes ' + this.remainSeconds + ' Seconds';
-		var that = this;
-		setTimeout(function(){
-			that.show();
-		}, 1000);		
+		this.diff = this.endDate - Date.now();
+		if(this.diff >= 0){
+	        this.calculate();		
+		    timeDisplay.innerHTML = '距离' + this.endDate.getFullYear()
+		        + '年' + (this.endDate.getMonth() + 1)
+		        + '月' + (this.endDate.getDate())
+			    + '日还剩' + this.remainDays 
+			    + '天' + this.remainHours 
+			    + '小时' + this.remainMinutes 
+			    + '分钟' + this.remainSeconds + '秒';
+		    var that = this;
+		    setTimeout(function(){
+			    that.show();
+		    }, 1000);
+		} else {
+			timeDisplay.innerHTML = '您的时间已经过期了哟~';
+		}		
 	};
 	
 	CountDown.prototype.start = function(){
