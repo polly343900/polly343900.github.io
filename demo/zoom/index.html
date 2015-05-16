@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Zoom in and out</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="container" id="zoomer">
+        <img src="imgs/bg.jpg" alt="bg" class="size-1"/>
+        <span class="iconfont icon-plus" id="plus"></span>
+        <span class="iconfont icon-minus" id="minus"></span>
+    </div>
+    <script src="scripts/zoom.js"></script>
+    <script>
+        var z = document.getElementById('zoomer');
+        new Zoom(z, {
+            ratio: 2
+        });
+    </script>
+</body>
+</html>
