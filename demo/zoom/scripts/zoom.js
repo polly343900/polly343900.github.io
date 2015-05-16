@@ -6,7 +6,7 @@
     } else if ( typeof exports === 'object' ) {  // Common JS方式
         module.exports = factory(root);
     } else {
-        root.Zoom = factory(root);    //普通的
+        root.zoom = factory(root);    //普通的
     }
 })(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
 
@@ -78,61 +78,16 @@
 
     // 默认参数
     var defaults = {
-        url: '',
-        ratio: 1
+        url: '',  // 图片url
+        ratio: 1,  // 初始图片比例
+        pace: 0.5  // 图片缩放幅度
     }
 
     // zoom就是一个插件/模块
-    var Zoom = function(element, options){
-
-        this.settings = extend({}, defaults, options);
-
-        this.target = element;
-        this.img = element.querySelector('img');
-        this.zoomImg = new Image();
-
-        this.plus = document.getElementById('plus');
-        this.minus = document.getElementById('minus');
-        if(this.settings.ratio <= 1) addClass(this.minus, 'disabled');
-
-        this.init();
-        var that = this;
-
-        this.plus.addEventListener('click', function(e){
-            that.settings.ratio += 0.5;
-            removeClass(that.minus, 'disabled');
-            that.change();
-        });
-
-        this.minus.addEventListener('click', function(e){
-
-            // 缩放的图片大小等于原图时，不往下执行了
-            if(that.settings.ratio <= 1) {
-                return;
-            }
-            that.settings.ratio -= 0.5;
-            that.change();
-
-            if(that.settings.ratio <= 1) addClass(this, 'disabled');
-        });
-
-        // 监测到鼠标按下的动作后，记录其所在位置，为了防止图片本身具有的拖动属性，使用e.preventDefault()
-        this.zoomImg.addEventListener('mousedown', function(e){
-            that.from(e);
-            e.preventDefault();
-        });
-
-        // 监测到鼠标松开的动作，计算位移差，也就是图片需要移动的距离
-        this.zoomImg.addEventListener('mouseup', function(e){
-
-            // 缩放图片大小等于原图时，不能拖动
-            if(that.settings.ratio <= 1) return;
-            that.to(e);
-        })
-
+    var Zoom = function(){
     };
 
-    Zoom.prototype.init = function(){
+    Zoom.prototype.load = function(){
 
         if(this.settings.url) {
             this.zoomImg.setAttribute('src', this.settings.url);
@@ -183,8 +138,60 @@
 
         this.zoomImg.style.left = left + 'px';
         this.zoomImg.style.top = top + 'px';
-    }
+    };
 
-    return Zoom;
+    Zoom.prototype.init = function(element, options){
+
+        this.settings = extend({}, defaults, options);
+
+        this.target = element;
+        this.img = element.querySelector('img');
+        this.zoomImg = new Image();
+
+        this.plus = document.getElementById('plus');
+        this.minus = document.getElementById('minus');
+        if(this.settings.ratio <= 1) addClass(this.minus, 'disabled');
+
+        this.load();
+        var that = this;
+
+        this.plus.addEventListener('click', function(e){
+            that.settings.ratio += that.settings.pace;
+            removeClass(that.minus, 'disabled');
+            that.change();
+        });
+
+        this.minus.addEventListener('click', function(e){
+
+            // 缩放的图片大小等于原图时，不往下执行了
+            if(that.settings.ratio <= 1) {
+                return;
+            }
+            that.settings.ratio -= that.settings.pace;
+            that.change();
+
+            if(that.settings.ratio <= 1) addClass(this, 'disabled');
+        });
+
+        // 监测到鼠标按下的动作后，记录其所在位置，为了防止图片本身具有的拖动属性，使用e.preventDefault()
+        this.zoomImg.addEventListener('mousedown', function(e){
+            that.from(e);
+            e.preventDefault();
+        });
+
+        // 监测到鼠标松开的动作，计算位移差，也就是图片需要移动的距离
+        this.zoomImg.addEventListener('mouseup', function(e){
+
+            // 缩放图片大小等于原图时，不能拖动
+            if(that.settings.ratio <= 1) return;
+            that.to(e);
+        })
+
+
+    };
+
+    var zoom = new Zoom();
+
+    return zoom;
 
 });
