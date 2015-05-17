@@ -1,6 +1,6 @@
 (function (root, factory) {
 
-    // AMD加载模块，本想尝试用requirejs的，但发现不会用
+    // AMD加载模块
     if ( typeof define === 'function' && define.amd ) {
         define([], factory(root));
     } else if ( typeof exports === 'object' ) {  // Common JS方式
@@ -22,6 +22,8 @@
             for(var key in obj){
                 if(obj.hasOwnProperty(key)){
                     if(typeof obj[key] === 'object' && obj[key] !== null){
+
+                        // 若obj[key]也是个对象且不为null时递归执行
                         extend(out[key], obj[key]);
                     } else {
                         out[key] = obj[key];
@@ -35,6 +37,8 @@
     // 检测是否存在某个类
     function hasClass(ele, name){
         if(!name) return;
+
+        // classList是IE10才开始支持
         if(ele.classList) return ele.classList.contains(name);
         else {
             var classRE = new RegExp('(^|\\s)' + name + '(\\s|$)');
@@ -88,7 +92,6 @@
     };
 
     Zoom.prototype.load = function(){
-
         if(this.settings.url) {
             this.zoomImg.setAttribute('src', this.settings.url);
         } else {
@@ -140,7 +143,20 @@
         this.zoomImg.style.top = top + 'px';
     };
 
+    Zoom.prototype.destroy = function(){
+        if(!this.settings) return;
+
+        this.settings = null;
+        this.target.removeChild(this.zoomImg);
+        this.zoomImg = null;
+
+    }
+
+    // 这里还是没有设计好，本来应该只暴露init方法的
     Zoom.prototype.init = function(element, options){
+
+        // 删除上一个实例所含的信息，不然会造成比如图片重叠等
+        this.destroy();
 
         this.settings = extend({}, defaults, options);
 
